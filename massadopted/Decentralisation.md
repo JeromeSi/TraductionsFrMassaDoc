@@ -57,7 +57,7 @@ Dans l’épisode 6 de notre testnet, nous avons introduit une version prélimin
 
 Ces innovations sont encore en cours de construction et nous donnerons plus de détails dans les prochains articles du blog.
 
-## A propos de Massa
+## À propos de Massa
 
 Massa est une blockchain haute performance faite pour être vraiment décentralisée dès le départ. Le testnet Massa a débuté en juillet 2021, permettant à chacun de tester notre protocole et est constamment amélioré depuis. Le testnet Massa est fort de plus de 6 000 nœuds.
 
