@@ -29,6 +29,6 @@ ou AAA.BBB.CCC.DDD doit être remplacé par votre adresse IP publique (pas l’a
 
 + Pour valider votre participation au programme de récopense du testnet, vous devez vous enregister avec votre compte Discord. Écrire quelque chose dans le canal “testnet-rewards-registration” de notre [Discord](https://discord.com/invite/massa) et notre bot MassaBot vous enverra les instruction par conversation privée. Plus d’information ici : [Testnet rewards program](https://massa.readthedocs.io/en/latest/testnet/rewards.html).
 
-Suivant :
+Suivant : [Programme de récompense du testnet](./rewards.md)/ [Testnet rewards program](https://massa.readthedocs.io/en/latest/testnet/rewards.html)
 
 Précédent : [Participation](./Staking.md) / [Staking](https://docs.massa.net/en/latest/testnet/staking.html)
