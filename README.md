@@ -1,6 +1,6 @@
 Je regroupe ici les traductions en français dont j'ai connaissance.
 
-Bonne 
+Bonne lecture !
 
 # Traductions d'articles provenant du site [massadopted.com](https://massadopted.com/)
 + [[Massa Special Interview Series] Aurelien , Rust developer at Massa Labs](https://medium.com/@bouqsi/massa-special-interview-series-aur%C3%A9lien-d%C3%A9veloppeur-rust-chez-massa-labs-257424f2a6f8)
