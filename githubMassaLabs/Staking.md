@@ -1,4 +1,4 @@
-# Staking
+# Participation
 
 Traduction de [“Staking](https://docs.massa.net/en/latest/testnet/staking.html)”
 

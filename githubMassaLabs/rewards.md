@@ -1,4 +1,4 @@
-# Programme de récompense pour la participation eu testnet
+# Programme de récompenses
 
 Traduction de “[Testnet Staking Rewards Program](https://docs.massa.net/en/latest/testnet/rewards.html)”
 
@@ -60,6 +60,6 @@ Le score du testnet d’une personne sera la somme des scores de chaque épisode
 
 La récompense pour le mainnet dépendra du score au testnet. Plus d’informations à ce propos seront données ultérieurement.
 
-Suivant : [Questions fréquentes](URL) / [Frequently Asked Questions](https://docs.massa.net/en/latest/testnet/faq.html)
+Suivant : [Questions fréquentes](./FAQ.md) / [Frequently Asked Questions](https://docs.massa.net/en/latest/testnet/faq.html)
 
 Précédent : [Accessibilité](./Routability.md) / [Routability](https://docs.massa.net/en/latest/testnet/routability.html)
