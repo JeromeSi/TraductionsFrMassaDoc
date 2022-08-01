@@ -59,6 +59,6 @@ Remplacer `<PASSWORD>` avec un mot de passe que vous devez conserver pour redém
 
 Remplacer `<PASSWORD>` avec un mot de passe que vous devez conserver pour redémarrer votre client. Veuillez attendre que la compilation de massa-client se termine avant de continuer.
 
-Précédent : [Installation d’un nœud](./Install_a_node.md) / [Installing a node](https://docs.massa.net/en/latest/testnet/install.html)
-
 Suivant : [Création d’un portefeuille Massa](./Creating_a_massa_wallet.md) / [Creating a Massa wallet](https://docs.massa.net/en/latest/testnet/wallet.html)
+
+Précédent : [Installation d’un nœud](./Installing_a_node.md) / [Installing a node](https://docs.massa.net/en/latest/testnet/install.html)

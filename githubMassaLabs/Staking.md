@@ -64,6 +64,6 @@ Cela prendra du temps avant que vos MAS soit à nouveau disponible et ils seront
 
 `wallet_info`
 
-Suivant : [Accessibilité](Routability.md) / [Routability](https://docs.massa.net/en/latest/testnet/routability.html)
+Suivant : [Accessibilité](./Routability.md) / [Routability](https://docs.massa.net/en/latest/testnet/routability.html)
 
 Précédent : [Création d’un portefeuille Massa](./Creating_a_massa_wallet.md) / [Creating a Massa wallet](https://docs.massa.net/en/latest/testnet/wallet.html)
