@@ -1,5 +1,7 @@
 # Questions fréquentes
 
+Traduction de "[Frequently Asked Questions](https://docs.massa.net/en/latest/testnet/faq.html)"
+
 ## Questions d'ordre général
 
 -----------------------------------
@@ -24,145 +26,104 @@ Les messages du nœud iront dans le fichier `nohup.out`. Vous pourrez fermer vot
 
 Vous pouvez aussi utiliser la commande [`screen`](https://help.ubuntu.com/community/Screen) ou [`tmux`](http://manpages.ubuntu.com/manpages/cosmic/man1/tmux.1.html) par exemple.
 
-Will Massa support smart contracts?
+### Est-ce que Massa incluera les smart contrats ?
 -----------------------------------
 
-We will try to support both the EVM for retro compatibility, and a
-specific smart contract engine that fully leverages the Massa protocol and
-allows to develop in more usual languages as well as introduces several
-innovations.
+Nous essayons d'inclure, à la fois, les EVM pour la rétro compatibilité et un moteur pour des smart contracts spécifiques utilisant pleinement le protocole Massa. Nous souhaitons aussi les développer pour des langages plus utilisés et introduire quelques innovations.
 
-We are currently finishing the implementation of a first version of the smart contract
-engine which should be released soon.
+Nous finissons l'implémentation de la première version du moteur de smart contract qui sera intégré prochainement. (N.d.T. : c'est fait !) 
 
-We are planning some exciting features, such as self-wakeup, a bit like
-what is introduced `here <https://arxiv.org/pdf/2102.10784.pdf>`__
+Nous avons prévu quelques fonctionnalités intéressantes, comme le réveil autonome, un peu comme ce qui est annoncé [ici](https://arxiv.org/pdf/2102.10784.pdf).
 
-What ports does Massa use?
+### Quels sont les port utilisés par Massa ?
 --------------------------
 
-By default, Massa uses TCP port 31244 for protocol communication with
-other nodes, and 31245 to bootstrap other nodes. Massa also uses TCP
-port 33034 for the new private
-API, and 33035 for the new public API (API v2).
+Par défaut, Massa utilise le TCP du port 31244 pour le protocole de communication avec les autres nœuds et le TCP du port 31245 pour se connecter ("bootstrap") aux autres nœuds. Massa utilises aussi le port 33034 pour une nouvelle API privée et le 33035 pour la nouvelle API publique (API v2).
 
-How to restart the Node?
+### Comment démarre-t-on un nœud ?
 ------------------------
 
-- Ubuntu : ctrl + c for killing the process and
-    :code:`cargo run --release |& tee logs.txt`
-- Windows : ctrl + c for killing the process and :code:`cargo run --release`
-- Mac Os : ctrl + c for killing the process and
-    :code:`cargo run --release > logs.txt 2>&1`
+- Ubuntu : `ctrl` + `c` pour terminer le précédent processus de nœud et `cargo run --release |& tee logs.txt` pour le  démarrer
+- Windows : `ctrl` + `c` pour terminer le précédent processus de nœud et `cargo run --release` pour le démarrer
+- Mac Os : `ctrl` + `c` pour terminer le précédent processus de nœud et `cargo run --release > logs.txt 2>&1` pour le  démarrer
 
-How secure are the keypairs ?
+### Comment peut-on faire pour sécuriser les clefs d'appairage ?
 --------------------------------
 
-Please note that the Testnet coins have NO VALUE. That being said, we are working on adding encryption on several levels before the Mainnet.
+Veuillez bien noter que  que la monnaie du testnet n'a AUCUNE valeur. Ceci dit, nous travaillons pour ajouter du cryptage à plusieurs niveaux avant le Mainnet.
 
-The staking key file in the node folder and the wallet file in the client folder are currently not encrypted but it will come soon. Also, private API communication between the client and the node is not encrypted for now but it will be implemented before the Mainnet as well.
+Le fichier de clé de staking  dans le dossier du nœud et le fichier du portefeuille dans le dossier du client ne sont actuellement pas cryptés mais cela arrivera bientôt. De même, l'API de communication entre le client et le nœud n'est pas cryptée pour le moment mais cela sera fait pour le Mainnet.
 
-Note that nodes don't know or trust each other, and they never exchange sensitive information, therefore cryptography is not required at that level.
-A handshake is performed at the connection with another peer. We sign random bytes that the peer sent us with our keypair, and same on the other side. And data that is sent after that is signed by its creator, not the node that is sending it to us.
-During the bootstrap, the handshake is asymmetric. We know the public key of the bootstrap node and we expect signed messages from it, but we do not communicate our public key, nor we sign the only message we send (just random bytes).
+Notez que les nœuds e connaissent et ne font pas confiance aux autres et n'échangent jamais d'informations sensibles donc le cryptage n'est pas nécessaire à ce niveau.
+Une vérification ("handshake") est faite à la connexion avec un autre pair. Nous signons des données aléatoires que le pair a transmis avec notre clé d'appairage et la même chose pour l'autre pair. Les données sont signé par le créateur et pas par le nœud qui les envoie.
+Durant la connexion au réseau Massa ("bootstrap"), la vérification est asymétrique. Nous connaissons la clé publique du nœud de *bootstrap* et nous attendons des messages signés de lui mais nous ne communiquons pas notre clé publique ni nous ne signons le seul message que nous envoyons (uniquement des données aléatoires).
 
-Balance and wallet
-==================
+## Solde et portefeuille
 
-How to migrate from one server to another without losing staked amounts and tokens?
+### Comment peut-on changer de serveur sans perdre le portefeuille ?
 -----------------------------------------------------------------------------------
 
-You need to back up the file wallet.dat and migrate it to the
-massa-client folder on your new server. You also need to backup and
-migrate the node_privkey.key file in massa-node/config to keep your
-connectivity stats.
+Vous avez besoin de conserver le fichier `wallet.dat` et de le copier dans le dossier `massa-client` du nouveau serveur. Vous pouvez aussi conserver et copier le fichier `node_privkey.key` dans le dossier `massa-node/config` pour conserver vos statistiques de connexion.
 
-If you have rolls, you also need to register the key used to buy rolls
-to start staking again (see [Staking](staking.md)).
+Si vous avez des jetons ("rolls"), vous devez aussi conserver l'adresse pour acheter les jetons pour recommencer le *staking* (voir [Staking](https://docs.massa.net/en/latest/testnet/staking.html) [[FR]](./Staking.md)).
 
-Why are the balances in the client and the explorer different ?
+### Pourquoi mes soldes dans le client et l'explorateur sont différents ?
 ---------------------------------------------------------------
 
-It may mean that your node is desynchronized.
-Check that your node is running, that the computer meets hardware requirements, and try restarting your node.
+Cela peut vouloir dire que votre nœud est désynchronisé.
+Vérifier que votre nœud fonctionne, que la machine correspond à la configuration requise et essayer de redémarrer votre nœud.
 
-Does the command `cargo run -- --wallet wallet.dat` override my existing wallet?
+### Est-ce que la commande `cargo run -- --wallet wallet.dat` écrase mon portefeuille existant ?
 --------------------------------------------------------------------------------
 
-No, it loads the wallet if it exists, otherwise, it creates it.
+Non, cela charge le portefeuille s'il existe sinon ça le crée.
 
-Where is the wallet.dat located?
+### Ou se trouve le fichier `wallet.dat` ?
 --------------------------------
 
-By default, in the massa-client directory.
+Par défaut le fichiet est dans le dossier `massa-client`.
 
-Rolls and staking
-=================
+## Jetons ("Rolls") et *staking*
 
-My rolls disappeared/were sold automatically.
+
+### Mes jetons disparaissent ou sont vendus automatiquement.
 ---------------------------------------------
 
-The most likely reason is that you did not produce some blocks when
-selected to do so. Most frequent reasons:
+La raison la plus probable est que le nœud n'a pas produit les blocs quand il a été sélectionné pour le faire. Les raisons les plus fréquentes :
 
--   Node not running 100% of the time during which you had
-    active_rolls \> 0
--   Node not being properly connected to the network 100% of the time
-    during which you had active_rolls \> 0
--   Node being desynchronized (which can be caused by temporary overload
-    if the specs are insufficient or if other programs are using
-    resources on the computer or because of internet connection
-    problems) at some point while you had active_rolls \> 0
--   The node does not having the right registered staking keys (type
-    staking_addresses in the client to verify that they match the
-    addresses in your wallet_info that have active rolls) 100% of the
-    time during which you had active_rolls \> 0
--   Some hosting providers have Half-duplex connection setting.
-    Contact hosting support and ask to switch you to full-duplex.
+- Le nœud n'a pas fonctionné 100% du temps durant le quel vous aviez au moins un jeton actif ("active_rolls")
+- Le nœud n'a pas été correctement connecté au réseau 100% du temps durant le quel vous aviez au moins un jeton actif ("active_rolls")
+- Le nœud a été désynchronisé (ce qui peut se produire par une surcharge temporaire si la configuration matérielle est insuffisante ou si d'autres programme utilisent les ressources sur la machine ou parce que la connexion Internet est défaillante/insuffisante)
+- Le nœud  n'a pas la bonne adresse de *staking* (utiliser `node_get_staking_addresses` dans le client pour vérifier qu'elle correpond à celle de votre portefeuille qui détient les jetons actifs ("active_rolls")) 100% du temps durant le quel vous aviez au moins un jeton actif ("active_rolls")
+- Certains fournisseurs (N.d.T. de VPS) ont des connexions Half-duplex. Contacter le support du fournisseur pour obtenir une connexion full-duplex.
 
-Diagnostic process:
+Protocole de diagnostique :
 
-- make sure the node is running on a computer that matches hardware requirements and that no other software is hogging ressources
-- type :code:`wallet_info` and make sure that at least one address has active rolls > 0
+- vérifier que votre nœud fonctionne sur votre machine dont les caractéristiques correspondent à la configuration requise et qu'aucun autre programme n'utilise les ressources
+- utiliser `wallet_info` et vérifier qu'au moins une des adresses possède au moins un jeton actif ("active rolls")
+    - si  il n'y a aucune adresse, il faut en créer une [voir ici](https://docs.massa.net/en/latest/testnet/wallet.html) [Fr](./Creating_a_massa_wallet.md) et recommencer le diagnostique
+    - si aucune adresse listée possède de jetons actif ("active rolls"), faire un achat de jeton [voir ici](https://docs.massa.net/en/latest/testnet/staking.html) [Fr](./Staking.md) et recommencer le diagnostique
+- Utiliser `node_get_staking_addresses` dans le client :
+    - si la liste est vide ou si aucune adresse affichée ne correspond à celle affichée avec `wallet_info` qui possède au moins un jeton actif ("active rolls") 
+        - utiliser la commande `node_add_staking_secret_keys` avec la clé secrète qui correspond à l'adresse qui possède au moins un jeton actif affiché par `wallet_info`
+- Vérifier votre adresse avec [l'explorateur en ligne](https://massa.net/testnet/) : si il y a une différence entre le nombre de jetons actifs affiché en ligne et celui retourné par `wallet_info` du client, cela devrait indiquer que votre nœud est désynchronisé. Essayer de le redémarrer.
 
-  - if there are no addresses listed, create a new one by calling `wallet_generate_private_key` and try the diagnostic process again
-  - if none of the listed addresses has non-zero active rolls, perform a new roll buy (see tutorials) and try the diagnostic process again
-
-- type :code:`node_get_staking_addresses` in the client:
-
-  - if the list is empty or if none of the addresses listed matches addresses that have active rolls in :code:`wallet_info`:
-
-    - call :code:`node_add_staking_secret_keys` with the secret key matching an address that has non-zero active rolls in :code:`wallet_info`
-
-- check your address with the online explorer: if there is a mismatch between the number of active rolls displayed in the online interface and what is returned by `wallet_info`, it might be that your node is desynchronized. Try restarting it.
-
-Why are rolls automatically sold? Is it some kind of penalty/slashing?
+### Pourquoi mes jetons sont vendus automatiquement ? Est-ce une sorte de pénalité/amende ?
 ----------------------------------------------------------------------
 
-It is not slashing because the funds are reimbursed fully. It's more
-like an implicit roll sell.
+Ce n'est pas une amende car les fonds sont intégralement reversés. C'est plus une vente automatique de jetons.
 
-The point is the following: for the network to be healthy, everyone with
-active rolls needs to produce blocks whenever they are selected to do
-so. If an address misses more than 70% of its block creation
-opportunities during cycle C, all its rolls are implicitly sold at the
-beginning of cycle C+3.
+La raison est la suivante : pour la santé du réseau, chacun en fonction du nombre de jetons actifs doit produire des blocs quand il est sélectionné. Si une adresse échoue à plus de 70% de sa création de blocs durant le cycle C, tous les jetons actifs sont automatiquement vendus au début du cycle C+3.
 
-Do I need to register the keys after subsequent purchases of ROLLs, or do they get staked automatically?
+### Dois-je enregistrer mes clée après avoir acheter des jetons ("ROLLs") ou ils sont *stakés* automatiquement ?
 --------------------------------------------------------------------------------------------------------
 
-For now, they don't stake automatically. In the future, we will add a
-feature allowing auto compounding. That being said, some people appear
-to have done that very early in the project. Feel free to ask on the
-`Discord <https://discord.com/invite/massa>`_ server :).
+Actuellement, ils ne vont pas *staker* automatiquement. Dans les prochaines version, nous ajouterons une fonctionnalité ou cela se fera automatiquement. Ceci dit, certaines personnes ont l'air de l'avoir fait très tôt dans le projet. N'hésitez pas à poser des question sur le [Discord](https://discord.com/invite/massa). (N.d.T. actuellement, on s'enregistre une seule fois pour commencer le staking)
 
-I can buy, send, sell ROLLs and coins without fees. When should I increase the fee \>0?
+### Je peux acheter, envoyer et vendre mes jetons ("ROLLs") et ma monnaie sans frais. Quand devrais-je mettre des frais supérieure à 0 ?
 ---------------------------------------------------------------------------------------
 
-For the moment, there are only a few transactions at the same time and
-so most created blocks are empty. This means that your operation will be
-added to a block even if the fee is zero. We will communicate if you
-need to increase the fee.
+Pour le moment, il y a peu de transaction en même temps et la plupart des blocs créés sont vides. Cela signifie que votre opération sera ajouter à un bloc même si les frais sont nuls. Nous vous indiquerons si vous avez besoin d'augmenter les frais.
 
 I am staking ROLLs but my wallet info doesn't change. When do I get my first staking rewards?
 ---------------------------------------------------------------------------------------------
