@@ -195,7 +195,7 @@ L'API ne démarre pas
   C'est, probablement, parce que les ports 33034/33035 sont déjà utilisés sur votre machine. Vous devirez changer les ports utilisés pour le client et le l'API dans les fichiers de configuration :
   
   - créer ou éditer le fichier `massa-node/config/config.toml` pour changer le port utiliser par l'API :
-  
+    
       [api]
       bind_private = "127.0.0.1:33034" # changer le port 33034 pour un autre
       bind_public = "0.0.0.0:33035" # changer le port 33035 pour un autre
@@ -224,8 +224,6 @@ Si votre OS, machine virtuelle ou fournisseur ne supporte par l'IPv6, essayer de
 
 Pour faire cela, éditer ou créer si absent le fichier  `massa-node/config/config.toml` avec les lignes suivantes :
 
-    
-    
         [network]
             bind = "0.0.0.0:31244"
     
