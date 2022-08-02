@@ -7,8 +7,11 @@ Comme les autres blockchains, Massa utilises la cryptographie à courbe elliptiq
 Cela signifie que votre clé secrete (“secret key”) est votre mot de passe vous autorisant à dépenser des jetons que vous avez sur votre adresse (votre adresse est un hash de votre clé publique).
 
 Maintenant, nous allons créer un portefeuille Massa.
+
 ## À partir de l’interface en ligne de commande
+
 ### Si votre client ne fonctionne pas
+
 Aller dans le dossier du client depuis une fenêtre de terminal :
 
 `cd massa/massa-client/`
@@ -32,7 +35,7 @@ On obtient la liste des clé de votre portefeuille accessible avec :
 
 `wallet_info`
 
-## Avec l’interface graphique
+## Avec l’interface graphique
 
 Si vous ne souhaitez pas participer à la production de blocs (“staking”) ou utiliser la ligne de commande, vous pouvez créer un portefeuille à partir de l’interface web : en haut à droite de [l’explorateur](https://massa.net/testnet/), dérouler le menu et choisir [“Wallet”](https://massa.net/testnet/wallet).
 
@@ -45,6 +48,6 @@ Maintenant, vous pouvez ajouter d’autres addresses ou voir la liste de vos adr
 Vous avez la possibilité d’enregistrer ce wallet et de le récupérer plus tard en sauvegardant la clé privé avec le bouton “Save” (N.d.T. : Je ne vois pas sur l’interface…).
 Vous pouvez utiliser un portefeuille précédemment créer en chargeant le fichier `wallet.dat` précédemment créer : bouton “Load wallet(.dat file)”.
 
-Suivant : [Participation](./Staking.md) / [Staking](https://docs.massa.net/en/latest/testnet/staking.html)
+Suivant : [Mise à jour d'un nœud](./Update.md) / [Update a node &mdash; Massa documentation](https://docs.massa.net/en/latest/testnet/update.html)
 
 Précédent : [Démarrer un node](./Running_a_node.md) / [Running a node](https://docs.massa.net/en/latest/testnet/running.html)
