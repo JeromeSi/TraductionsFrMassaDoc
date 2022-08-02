@@ -202,30 +202,27 @@ L'API ne démarre pas
 
 - créer ou éditer le fichier `massa-client/config/config.toml` et utiliser les même ports :
   
-  .. code-block:: toml
-  
       [default_node]
       ip = "127.0.0.1"
       private_port = 33034 # changer le port 33034 pour celui choisi avec bind_private
       public_port = 33035 # changer le port 33035 pour celui choisi avec  bind_public
 
-Raspberry Pi problem "Thread 'main' panicked"
+Raspberry Pi : le problème "Thread 'main' panicked"
 ---------------------------------------------
 
-If you encountered an error message such as:
+Si vous avez une erreur comme :
 
-"Thread 'main' panicked at 'called Option::unwrap() on a None value', models/src/hasher.rs:35:46", this is a known problem on older Raspberry Pi,
-especially with Raspbian. Try installing Debian.
+"Thread 'main' panicked at 'called Option::unwrap() on a None value', models/src/hasher.rs:35:46", c'est un problème connu sur les vieux  Raspberry Pi,
+particulièrement avec avec Raspbian. Essayer d'installer Debian.
 
-Please note, running a Massa node on a Raspberry Pi is ambitious and will probably not work that well. We don't
-expect raspberry to be enough powerful to run on the mainnet.
+Veuillez noter qu'utiliser un Raspberry Pi pour un nœud Massa est téméraire et il ne fonctionnera probablement pas  correctement. Nous nous attendons pas à ce qu'un Raspberry Pi soit suffisamment puissant pour  le Mainnet.
 
-Disable IPV6 support
+Désactiver la prise en charge de l'IPv6
 --------------------
 
-If your OS, virtual machine or provider does not support IPV6, try disabling IPV6 support on your Massa node.
+Si votre OS, machine virtuelle ou fournisseur ne supporte par l'IPv6, essayer de désactiver la prise en charge de l'IPv9 par votre nœud Massa.
 
-To do this, edit (or create if absent) the file `massa-node/config/config.toml` with the following contents:
+Pour faire cela, éditer ou créer si absent le fichier  `massa-node/config/config.toml` avec les lignes suivantes :
 
     .. code-block:: toml
     
@@ -235,4 +232,4 @@ To do this, edit (or create if absent) the file `massa-node/config/config.toml` 
         [bootstrap]
             bind = "0.0.0.0:31245"
 
-then restart your node.
+Puis redémarrer votre nœud.
