@@ -177,47 +177,37 @@ Si vous utilisez la même installation, MassaBot retournera le message suivant :
 
 Pour résoudre le problème, vus devez générer un nouvel "Node ID". Vous devez arrêter votre nœud et effacer le fichier `massa-node/config/node_privkey.key`. Vous pouvez démarrer votre nœud et vous aurez un nouvel "Node ID".
 
-Common issues
+Problèmes courants
 =============
 
-Ping too high issue
+Problème de temps de réponse ("ping") trop long
 -------------------
 
-Check the quality of your internet connection. Try increasing the
-"max_ping" setting in your config file:
+Vérifier la qualité de la connexion Internet. Essayer d'augmenter la valeur de "max_ping"  en l'ajoutant dans le fichier `massa-node/config/config.toml` :
 
-- edit file `massa-node/config/config.toml` (create if it is absent) with the following
-  content:
-  
-  .. code-block:: toml
-  
-      [bootstrap]
-      max_ping = 10000 # try 10000 for example
+- éditer le fichier `massa-node/config/config.toml` (ou créer le s'il est absent) avec le contenu suivant : <br>`[bootstrap]`<br>` max_ping = 10000 # try 10000 for example`
 
-API can't start
+L'API ne démarre pas
 ---------------
 
-- If your API can't start, e.g. with
+- Si l'API ne démarre pas, par exemple avec :
   `could not start API controller: ServerError(hyper::Error(Listen, Os { code: 98, kind: AddrInUse, message: "Address already in use" }))`,
-  it's probably because the default API ports 33034/33035 are already in use
-  on your computer. You should change the port in the config files,
-  both in the API and Client:
-* create/edit file `massa-node/config/config.toml` to change the port used by the API:
+  C'est, probablement, parce que les ports 33034/33035 sont déjà utilisés sur votre machine. Vous devirez changer les ports utilisés pour le client et le l'API dans les fichiers de configuration :
   
-  .. code-block:: toml
+  - créer ou éditer le fichier `massa-node/config/config.toml` pour changer le port utiliser par l'API :
   
       [api]
-      bind_private = "127.0.0.1:33034" # change port here from 33034 to something else
-      bind_public = "0.0.0.0:33035" # change port here from 33035 to something else
-- create/edit file `massa-client/config/config.toml` and put the same
-  port:
+      bind_private = "127.0.0.1:33034" # changer le port 33034 pour un autre
+      bind_public = "0.0.0.0:33035" # changer le port 33035 pour un autre
+
+- créer ou éditer le fichier `massa-client/config/config.toml` et utiliser les même ports :
   
   .. code-block:: toml
   
       [default_node]
       ip = "127.0.0.1"
-      private_port = 33034 # change port here from 33034 to the port chosen in node's bind_private
-      public_port = 33035 # change port here from 33035 to the port chosen in node's bind_public
+      private_port = 33034 # changer le port 33034 pour celui choisi avec bind_private
+      public_port = 33035 # changer le port 33035 pour celui choisi avec  bind_public
 
 Raspberry Pi problem "Thread 'main' panicked"
 ---------------------------------------------
