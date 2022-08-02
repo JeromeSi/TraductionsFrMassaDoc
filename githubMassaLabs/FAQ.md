@@ -224,7 +224,7 @@ Si votre OS, machine virtuelle ou fournisseur ne supporte par l'IPv6, essayer de
 
 Pour faire cela, éditer ou créer si absent le fichier  `massa-node/config/config.toml` avec les lignes suivantes :
 
-    .. code-block:: toml
+    
     
         [network]
             bind = "0.0.0.0:31244"
