@@ -147,7 +147,7 @@ Vous devez attendre que vos jetons passent actifs ("Active rolls") environ 1h45m
 Testnet et récompenses
 ===================
 
-Comment foire pour déplacer mon nœud d'une machine à une autre et conserver mon score du programme de récompenses du Testnet ?
+Comment faire pour déplacer mon nœud d'une machine à une autre et conserver mon score du programme de récompenses du Testnet ?
 ------------------------------------------------------------------------------------------------------------------------
 
 Si vous déplacez votre nœud d'une machine à une autre, vous devez conserver votre clé d'appairage avec adresse de *staking* qui est enregistrée. La clé d'appairage est dans le fichier "wallet.dat"  dans le dossier "massa-client". Vous pouvez aussi conserver la clé d'appairage de votre nœud situé dans le fichier "node_privkey.key" dans le dossier "massa-node/config/". Si vous ne faites pas ces sauvegardes et restauration, il faut vous enregistrer votre nœud sur le bot ("MassaBot") dans Discord.
@@ -220,7 +220,7 @@ Veuillez noter qu'utiliser un Raspberry Pi pour un nœud Massa est téméraire e
 Désactiver la prise en charge de l'IPv6
 --------------------
 
-Si votre OS, machine virtuelle ou fournisseur ne supporte par l'IPv6, essayer de désactiver la prise en charge de l'IPv9 par votre nœud Massa.
+Si votre OS, machine virtuelle ou fournisseur ne supporte par l'IPv6, essayer de désactiver la prise en charge de l'IPv6 par votre nœud Massa.
 
 Pour faire cela, éditer ou créer si absent le fichier  `massa-node/config/config.toml` avec les lignes suivantes :
 
@@ -231,3 +231,5 @@ Pour faire cela, éditer ou créer si absent le fichier  `massa-node/config/conf
             bind = "0.0.0.0:31245"
 
 Puis redémarrer votre nœud.
+
+Précédent : [Programme de récompenses](./rewards.md) / [Testnet Stacking Rewards Program](https://github.com/massalabs/massa/blob/main/docs/testnet/rewards.rst)
