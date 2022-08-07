@@ -7,6 +7,7 @@ Dans Massa, le nombre minimal de monnaies requis pour produire (“to stake”) 
 Les adresses qui vont produire (“stake”, créer un bloc) sont sélectionnés au hasard dans tous les “threads” basé sur le nombre de “roll” possédés. La liste des stakers (producteurs) avec le nombre de rolls est [accessible à cette adresse](https://massa.net/testnet/staking/).
 
 Les rolls peuvent être achetés avec la monnaie de Massa ou vendu pour retrouver cette monnaie. Si vous avez au moins 100 MAS, vous pouvez continuer ce tutoriel. Dans le cas contraire, il vous faut envoyer votre adresse (“address” obtenu avec “wallet_info” dans le client Massa) au bot dans le canal “testnet-faucet” de notre [Discord](https://discord.com/invite/massa).
+
 ## Acheter des rolls
 
 Il faut aller chercher l’adresse qui possède des MAS dans votre portefeuille. Dans le client Massa, on utilise :
@@ -27,7 +28,7 @@ Cela devrait prendre moins d’une minute pour vos rolls parviennent à l’éta
 
 N.d.T. : Vous devez lire la suite pour que cela fonctionne.
 
-## Indiquer que votre nœud peut commencer le “staking” avec vos “rolls”
+## Indiquer que votre nœud peut commencer le “staking” avec vos “rolls”
 
 On récupère l’adresse secrète du portefeuille qui contient vos “rolls” :
 
@@ -54,6 +55,7 @@ Pour vérifier quand votre adresse est sélectionnée pour faire un bloc, vous p
 il faut regarder dans la section “Block draws”.
 
 Vous pouvez aussi vérifier que, dans la section “Sequential balance:”, “Final balance” et “Candidate balance” augmentent à chaque bloc produit d’un petit montant.
+
 ## Vendre des rolls
 
 Si vous voulez récupérer une partie des MAS ou la totalité, vous devez vendre une partie ou tous vos rolls en suivant le même principe que pour l’achat :
