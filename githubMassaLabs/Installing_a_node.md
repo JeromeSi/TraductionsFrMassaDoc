@@ -36,16 +36,16 @@ Si vous souhaitez utiliser le code source pour compiler, il faut suivre les éta
 #### Mise en place de l’environnement de compilation Rust
 
 + Avec Windows, en premier, vous devez suivre les instructions de Microsoft pour être capable de faire fonctionner un environnement Rust, [c’est ici](https://docs.microsoft.com/en-gb/windows/dev-environment/rust/setup).
-    + Installation de “Visual Studio” (recommandé) ou le “ Microsoft C++ Build Tools”.
-    + Une fois que “Visual Studio” est installé, click sur “C++ Build Tool”. Selectionner sur la colonne de droite nommée “détails d’installation (“installation details”) les paquets suivants:
-        + MSCV v142 — VS 2019
-        + Windows 10 SDK
-        + C++ CMake tools for Windows
-        + Testing Tools Core Feature
-    + Click installer sur le bouton droit pour télécharger et installer ces paquets
+  + Installation de “Visual Studio” (recommandé) ou le “ Microsoft C++ Build Tools”.
+  + Une fois que “Visual Studio” est installé, click sur “C++ Build Tool”. Selectionner sur la colonne de droite nommée “détails d’installation (“installation details”) les paquets suivants:
+    + MSCV v142 — VS 2019
+    + Windows 10 SDK
+    + C++ CMake tools for Windows
+    + Testing Tools Core Feature
+  + Click installer sur le bouton droit pour télécharger et installer ces paquets
 + Installation de [Chocolatey](https://docs.chocolatey.org/en-us/choco/setup) et exécution : `choco install llvm`
-    + Installation de Rust, [téléchargeable ici](https://www.rust-lang.org/tools/install)
-    + Installation de Git pour Windows, [téléchargeable ici](https://git-scm.com/download/win)
+  + Installation de Rust, [téléchargeable ici](https://www.rust-lang.org/tools/install)
+  + Installation de Git pour Windows, [téléchargeable ici](https://git-scm.com/download/win)
 
 #### Cloner le dépôt de Massa
 

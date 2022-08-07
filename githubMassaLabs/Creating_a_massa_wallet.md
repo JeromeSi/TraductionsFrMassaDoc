@@ -48,6 +48,6 @@ Maintenant, vous pouvez ajouter d’autres addresses ou voir la liste de vos adr
 Vous avez la possibilité d’enregistrer ce wallet et de le récupérer plus tard en sauvegardant la clé privé avec le bouton “Save” (N.d.T. : Je ne vois pas sur l’interface…).
 Vous pouvez utiliser un portefeuille précédemment créer en chargeant le fichier `wallet.dat` précédemment créer : bouton “Load wallet(.dat file)”.
 
-Suivant : [Mise à jour d'un nœud](./Update.md) / [Update a node &mdash; Massa documentation](https://docs.massa.net/en/latest/testnet/update.html)
+Suivant : [Participation](./Stacking.md) / [Staking](https://docs.massa.net/en/latest/testnet/staking.html)
 
-Précédent : [Démarrer un node](./Running_a_node.md) / [Running a node](https://docs.massa.net/en/latest/testnet/running.html)
+Précédent : [Mise à jour d'un nœud](./Update.md) / [Update a node](https://docs.massa.net/en/latest/testnet/update.html)
