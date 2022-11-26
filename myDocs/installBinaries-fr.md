@@ -30,7 +30,9 @@ Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se 
 
 ## 3. Mise en place de l'accessibilité du node
 
-On commence par vérifier si on a ou pas un pare-feu actif : **sudo ufw status**. Il y a 2 possibilités :
+On commence par vérifier si on a ou pas un pare-feu actif : **sudo ufw status**
+
+Il y a 2 possibilités :
 
 - pas de pare-feu comme sur ce [lien](https://amazingrdp.com/wp-content/uploads/2021/05/Screenshot_1.pnghttps://amazingrdp.com/wp-content/uploads/2021/05/Screenshot_1.png).
 
@@ -46,16 +48,63 @@ Il faut ouvrir 3 ports (33244, 33245 et 33035) comme suit:
 
 - **sudo ufw allow 333035**
 
-- 
+-
 
-Il faut aussi connaître son IP publique pour la noter dans le fichier **~/massa/massa-node/config/config.toml** que l'on obtient avec **host myip.opendns.com resolver1.opendns.com**. Elle est sur la dernière ligne.
+Il faut aussi connaître son IP publique pour la noter dans le fichier **~/massa/massa-node/config/config.toml** que l'on obtient avec **host myip.opendns.com resolver1.opendns.com** Elle est sur la dernière ligne.
 
 Le fichier **~/massa/massa-node/config/config.toml** doit contenir :
 
-```[network]
+`[network]`
+`routable_ip = "Votre IPv4 ou IPv6 entourée de guillemet"`
 
-```
+On fait l'édition avec **nano** : **nano ~/massa/massa-node/config/config.toml**
 
+## 4. Mise en marche du node avec *nohup*
 
+On se place dans le dossier **~/massa/massa-node/** avec **cd ~/massa/massa-node/**
 
+On exécute **massa-node** en le détachant du terminal avec **nohup ./massa-node -p leMotDePasse &>> ./logs.txt &** Il ne doit s'afficher que le numéro associé au processus si tout est ok.
 
+## 5. Création du wallet
+
+On se place dans le dossier **~/massa/massa-client/** avec **cd ~/massa/massa-client/**
+
+On exécute **massa-client** avec **./massa-client -p leMotDePasse**
+
+Vous êtes désormais dans le client qui vient d'afficher l'aide. On génère le wallet avec **wallet_generate_secret_key**
+
+On en profite pour déclarer notre wallet prêt à staker des blocs avec **node_add_staking_secret_keys**
+
+On peut vérifier que l'opération s'est bien passée avec **node_get_staking_addresses**
+
+On sort du client avec **exit**
+
+## 6. Est-ce que le node est connecté au réseau Massa ?
+
+On va utiliser le client :
+
+- **cd ~/massa/massa-client/**
+
+- **./massa-client -p leMotDePasse**
+
+L'opération pour rejoindre le réseau Massa s'appelle le bootstrap
+
+La commande **get_status** renvoie plein d'informations quand le node est connecté au réseau Massa. Dans ce cas, rendez-vous au paragraphe expliquant l'achat d'un roll.
+
+Si **get_status** renvoie un message d'erreur en rouge, il y a un problème.
+
+On va chercher les informations dans les dernières lignes du fichier de log avec **tail ~/massa/massa-node/logs.txt**
+
+Vous lisez :
+
+- *Bootstrap failed because the bootstrap server currently has no slots available.* : le bootstrap ne s'est pas fait car il n'y a pas de disponibilité des serveurs, il faut juste être patient
+
+- *Error while connecting to bootstrap server: io error: Connection refused (os error 111)* : il faut vérifier que les ports sont bien ouvert (machine + box éventuellement)
+
+- *Error while bootstrapping: `massa_signature` error Signature error* : mauvais signe car je n'ai jamais vu ça avec la version binaire, à part la réinstallation rien à proposer
+
+- *Your last bootstrap on this server was ...s ago and you have to wait ...s before retrying* : on a droit à un bootstrap toutes les 12h (ou 8h), il faut attendre de tomber sur un serveur ou le bootstrap n'a pas été tenté ou se trouver une liste de node pour le faire mais ils ne seront pas officiels
+
+- autre chose : allez poser votre question à la communauté [Massa](https://massa.net/community)
+
+## 7. Acheter des rolls
