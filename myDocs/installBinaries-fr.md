@@ -6,6 +6,8 @@ Basée sur l'épisode 16
 
 J'utilise la version binaire sur une machine Linux.
 
+Mise en garde : le fonctionnement sur un serveur mutualisé est aléatoire.
+
 ## 1. Récupération de l'archive
 
 On se rend sur la page des différentes versions: [Releases](https://github.com/massalabs/massa/releases) pour sélectionner la dernière disponible.
@@ -47,8 +49,6 @@ Il faut ouvrir 3 ports (33244, 33245 et 33035) comme suit:
 - **sudo ufw allow 31245**
 
 - **sudo ufw allow 333035**
-
-
 
 Il faut aussi connaître son IP publique pour la noter dans le fichier **~/massa/massa-node/config/config.toml** que l'on obtient avec **host myip.opendns.com resolver1.opendns.com** Elle est sur la dernière ligne.
 
@@ -108,3 +108,29 @@ Vous lisez :
 - autre chose : allez poser votre question à la communauté [Massa](https://massa.net/community)
 
 ## 7. Acheter des rolls
+
+Pour acheter des rolls, il faut des Massa. Durant le testnet, les Massa n'ont aucune valeur et sont distribués avec générosité.
+
+Il faut utiliser l'adresse de staking que l'on obtient en utilisant **node_get_staking_addresses** dans le client ou **wallet_info** (dans ce dernier cas, c'est celle nommée *Address* )
+
+Les sources sont :
+
+- sur [Discord](https://discord.gg/massa), il faut envoyer son adresse de staking sur le channel *#testnet-faucet*
+
+- sur [paranorm.pro](http://mfaucet.paranorm.pro/), il faut envoyer son adresse de staking et prouvez que l'on est pas un robot
+
+Les massa arrivent en moins d'une minute sur le wallet et on peut les dépenser dès que l'on voit le `Balance: final` avec plus de 100Massa (**wallet_info** dans **massa-client**).
+
+On utilise **buy_rolls adresseDeStaking 1 0** pour acheter 1 roll (qui coûte 100Mass) avec 0 fees.
+
+Il faut 3 cycles pour que le roll deviennent actif soit 1h42min24s au maximum.
+
+## 8. Le système de récompenses
+
+Voir la doc :
+
+- [en anglais](https://docs.massa.net/en/latest/testnet/rewards.html)
+
+- [en français](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/githubMassaLabs/rewards.md)
+
+
