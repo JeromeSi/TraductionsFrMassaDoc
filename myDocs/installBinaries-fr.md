@@ -48,7 +48,7 @@ Il faut ouvrir 3 ports (33244, 33245 et 33035) comme suit:
 
 - **sudo ufw allow 333035**
 
--
+
 
 Il faut aussi connaître son IP publique pour la noter dans le fichier **~/massa/massa-node/config/config.toml** que l'on obtient avec **host myip.opendns.com resolver1.opendns.com** Elle est sur la dernière ligne.
 
