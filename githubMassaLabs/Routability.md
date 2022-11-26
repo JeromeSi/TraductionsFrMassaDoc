@@ -18,7 +18,7 @@ Avec Massa, les nœuds ne sont pas accessible par défaut et requiert une interv
 + Si l’ordinateur de votre nœud est derrière un routeur/NAT, vous devez le configurer :
   + si routeur utilise le DHCP, vous pouvez configurer votre routeur qu’il attribue toujours la même IP à l’ordinateur du nœud en utilisant l’adresse MAC (une adresse IP local qui ne change pas, en général du genre 192.168.X.XXX)
   + sur le routeur, les connexions entrantes TCP des ports 31244 et 31245 doivent être redirigées vers l’adresse IP local de l’ordinateur du nœud
-+ Modifier la configuration du parefeu pour autoriser les connexions entrantes TCP sur les ports 31244 et 31245 (exemple : `ufw allow 31244 && ufw allow 31245` avec Ubuntu / Debian, ou configurer Windows Firewall on Windows)
++ Modifier la configuration du parefeu pour autoriser les connexions entrantes TCP sur les ports 31244 et 31245 (exemple : `sudo ufw allow 31244 && sudo ufw allow 31245` avec Ubuntu / Debian, ou configurer Windows Firewall on Windows)
 + Il faut éditer le fichier `massa-node/config/config.toml` (ou le créer s’il n’éxiste pas) avec le contenu suivant :<br>
   `[network]`<br>
   `routable_ip = "AAA.BBB.CCC.DDD"`<br>
