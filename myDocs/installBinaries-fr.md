@@ -1,4 +1,4 @@
-# Installation d'un node
+# Installation d'un node avec *nohup*
 
 Basée sur l'épisode 16
 
