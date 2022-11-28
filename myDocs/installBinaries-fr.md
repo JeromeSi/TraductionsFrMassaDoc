@@ -30,7 +30,11 @@ On utilise **tar** sur notre archive : **tar xzf massa_TEST.XX.X_release_linux.t
 
 Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se trouve tout le nécessaire.
 
-## 3. Mise en place de l'accessibilité du node
+## 3. Installation d'une bibliothèque
+
+Vous devez installer la bibliothèque **libssl1** avec **sudo apt install libssl1**
+
+## 4. Mise en place de l'accessibilité du node
 
 On commence par vérifier si on a ou pas un pare-feu actif : **sudo ufw status**
 
@@ -59,13 +63,13 @@ Le fichier **~/massa/massa-node/config/config.toml** doit contenir :
 
 On fait l'édition avec **nano** : **nano ~/massa/massa-node/config/config.toml**
 
-## 4. Mise en marche du node avec *nohup*
+## 5. Mise en marche du node avec *nohup*
 
 On se place dans le dossier **~/massa/massa-node/** avec **cd ~/massa/massa-node/**
 
 On exécute **massa-node** en le détachant du terminal avec **nohup ./massa-node -p leMotDePasse &>> ./logs.txt &** Il ne doit s'afficher que le numéro associé au processus si tout est ok.
 
-## 5. Création du wallet
+## 6. Création du wallet
 
 On se place dans le dossier **~/massa/massa-client/** avec **cd ~/massa/massa-client/**
 
@@ -79,7 +83,7 @@ On peut vérifier que l'opération s'est bien passée avec **node_get_staking_ad
 
 On sort du client avec **exit**
 
-## 6. Est-ce que le node est connecté au réseau Massa ?
+## 7. Est-ce que le node est connecté au réseau Massa ?
 
 On va utiliser le client :
 
@@ -107,7 +111,7 @@ Vous lisez :
 
 - autre chose : allez poser votre question à la communauté [Massa](https://massa.net/community)
 
-## 7. Acheter des rolls
+## 8. Acheter des rolls
 
 Pour acheter des rolls, il faut des Massa. Durant le testnet, les Massa n'ont aucune valeur et sont distribués avec générosité.
 
@@ -125,12 +129,10 @@ On utilise **buy_rolls adresseDeStaking 1 0** pour acheter 1 roll (qui coûte 10
 
 Il faut 3 cycles pour que le roll deviennent actif soit 1h42min24s au maximum.
 
-## 8. Le système de récompenses
+## 9. Le système de récompenses
 
 Voir la doc :
 
 - [en anglais](https://docs.massa.net/en/latest/testnet/rewards.html)
 
 - [en français](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/githubMassaLabs/rewards.md)
-
-
