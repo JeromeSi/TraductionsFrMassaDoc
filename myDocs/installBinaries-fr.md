@@ -14,7 +14,7 @@ On se rend sur la page des différentes versions: [Releases](https://github.com/
 
 Pour Linux, le fichier à télécharger sera nommé comme ***massa_TEST.*** **XX.X** ***_release_linux.tar.gz*** ou **XX.X** est le numéro de la version.
 
-Sans interface graphique, on utilise *wget* :
+Sans interface graphique, on utilise **wget** pour télécharger :
 
 - pour l'installer : **sudo apt install wget**
 
@@ -40,7 +40,7 @@ On commence par vérifier si on a ou pas un pare-feu actif : **sudo ufw status**
 
 Il y a 2 possibilités :
 
-- pas de pare-feu comme sur ce [lien](https://amazingrdp.com/wp-content/uploads/2021/05/Screenshot_1.pnghttps://amazingrdp.com/wp-content/uploads/2021/05/Screenshot_1.png).
+- pas de pare-feu comme sur ce [lien](https://i0.wp.com/thelinuxcode.com/wp-content/uploads/2018/02/Terminal-augusto@thelinuxcode-_013.png?resize=579%2C160&ssl=1).
 
 - pare-feu actif comme sur ce [lien](https://www.lifewire.com/thmb/uTsuw9NaujyxRdkwsB4fZeP8oTw=/993x803/filters:no_upscale():max_bytes(150000):strip_icc()/ufwdisable_2-5c6c406446e0fb0001917358.jpg).
 
@@ -77,7 +77,7 @@ On exécute **massa-client** avec **./massa-client -p leMotDePasse**
 
 Vous êtes désormais dans le client qui vient d'afficher l'aide. On génère le wallet avec **wallet_generate_secret_key**
 
-On en profite pour déclarer notre wallet prêt à staker des blocs avec **node_add_staking_secret_keys**
+On en profite pour déclarer notre wallet prêt à staker des blocs avec **node_add_staking_secret_keys VotreCléSecreteIci**
 
 On peut vérifier que l'opération s'est bien passée avec **node_get_staking_addresses**
 
@@ -91,7 +91,7 @@ On va utiliser le client :
 
 - **./massa-client -p leMotDePasse**
 
-L'opération pour rejoindre le réseau Massa s'appelle le bootstrap
+L'opération pour rejoindre le réseau Massa s'appelle le *bootstrap*.
 
 La commande **get_status** renvoie plein d'informations quand le node est connecté au réseau Massa. Dans ce cas, rendez-vous au paragraphe expliquant l'achat d'un roll.
 
@@ -103,7 +103,7 @@ Vous lisez :
 
 - *Bootstrap failed because the bootstrap server currently has no slots available.* : le bootstrap ne s'est pas fait car il n'y a pas de disponibilité des serveurs, il faut juste être patient
 
-- *Error while connecting to bootstrap server: io error: Connection refused (os error 111)* : il faut vérifier que les ports sont bien ouvert (machine + box éventuellement)
+- *Error while connecting to bootstrap server: io error: Connection refused (os error 111)* : il faut vérifier que les ports sont bien ouverts (machine + box éventuellement)
 
 - *Error while bootstrapping: `massa_signature` error Signature error* : mauvais signe car je n'ai jamais vu ça avec la version binaire, à part la réinstallation rien à proposer
 
@@ -121,7 +121,7 @@ Les sources sont :
 
 - sur [Discord](https://discord.gg/massa), il faut envoyer son adresse de staking sur le channel *#testnet-faucet*
 
-- sur [paranorm.pro](http://mfaucet.paranorm.pro/), il faut envoyer son adresse de staking et prouvez que l'on est pas un robot
+- sur [paranorm.pro](http://mfaucet.paranorm.pro/), il faut envoyer son adresse de staking et prouvez que l'on n'est pas un robot
 
 Les massa arrivent en moins d'une minute sur le wallet et on peut les dépenser dès que l'on voit le `Balance: final` avec plus de 100Massa (**wallet_info** dans **massa-client**).
 
