@@ -20,7 +20,7 @@ Sans interface graphique, on utilise **wget** pour télécharger :
 
 - on va dans le dossier de l'utilisateur : **cd**
 
-- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.XX.X/massa_TEST.XX.X_release_linux.tar.gz** Il faudra remplacer les **XX.X** par la version recherchée
+- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.17.1/massa_TEST.17.1_release_linux.tar.gz** Il faudra remplacer les **XX.X** par la version recherchée
 
 ## 2. Décompression de l'archive
 
