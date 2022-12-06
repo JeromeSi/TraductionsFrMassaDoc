@@ -1,6 +1,7 @@
 # Installation d’un nœud
 
 Traduction de “[Installing a node](https://docs.massa.net/en/latest/testnet/install.html)”
+Conforme à la version 17.1 de Massa
 
 | Note<br>
 | Actuellement 4 cœurs et 8Gb de RAM doivent suffire pour faire fonctionner un nœud, mais ces caractéristiques devraient augmenter dans le temps. Plus d’info dans la [FAQ](https://docs.massa.net/en/latest/testnet/faq.html#testnet-faq).
@@ -26,8 +27,8 @@ Si vous souhaitez utiliser le code source pour compiler, il faut suivre les éta
 + Installation de rustup: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 + Configuration du chemin : `source $HOME/.cargo/env`
 + Vérification de la version de rust : `rustc --version`
-+ Installation de la version quotidienne (nigthly) : `rustup toolchain install nightly`
-+ En faire la version par défaut : `rustup default nightly`
++ Installation de la version quotidienne (nigthly) : `rustup toolchain install nightly-2022-11-14`
++ En faire la version par défaut : `rustup default nightly-2022-11-14`
 + Vérification de la version de rust : `rustc --version`
 + Cloner le dépôt Massa : `git clone --branch testnet https://github.com/massalabs/massa.git`
 
@@ -51,6 +52,6 @@ Si vous souhaitez utiliser le code source pour compiler, il faut suivre les éta
 
 + Ouvrir “Windows Power Shell”
 + Cloner la dernière version : `git clone --branch testnet https://github.com/massalabs/massa.git`
-+ Changer la version par défaut de Rust pour la version quotidienne : `rustup default nightly`
++ Changer la version par défaut de Rust pour la version quotidienne : `rustup default nightly-2022-11-14`
 
 Suivant : [Démarrer un nœud](./Running_a_node.md) / [Running a node](https://docs.massa.net/en/latest/testnet/running.html)
