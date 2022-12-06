@@ -1,6 +1,6 @@
 # Installation d'un node avec *nohup*
 
-Basée sur l'épisode 16
+Basée sur l'épisode 17
 
 ## Introduction
 
