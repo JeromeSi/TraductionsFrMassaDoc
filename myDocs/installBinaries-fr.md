@@ -6,7 +6,7 @@ Basée sur l'épisode 17
 
 J'utilise la version binaire sur une machine Linux.
 
-Mise en garde : le fonctionnement sur un serveur mutualisé est aléatoire.
+Mise en garde : le fonctionnement sur un serveur mutualisé (VPS) est aléatoire.
 
 ## 1. Récupération de l'archive
 
