@@ -44,7 +44,7 @@ Il y a 2 possibilités :
 
 - pare-feu actif comme sur ce [lien](https://www.lifewire.com/thmb/uTsuw9NaujyxRdkwsB4fZeP8oTw=/993x803/filters:no_upscale():max_bytes(150000):strip_icc()/ufwdisable_2-5c6c406446e0fb0001917358.jpg).
 
-Si vous voulez activer votre pare-feu, il faut commencer par autoriser les liaisons SSH surtout si vous l'utilisez pour contacter votre machine avec :**sudo ufw allow 22** puis on active le pare-feu avec **sudo ufw enable**
+Si vous voulez activer votre pare-feu, il faut commencer par autoriser les liaisons SSH surtout si vous l'utilisez pour contacter votre machine avec **sudo ufw allow 22** puis on active le pare-feu avec **sudo ufw enable**
 
 Il faut ouvrir 3 ports (33244, 33245 et 33035) comme suit:
 
