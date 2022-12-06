@@ -2,15 +2,13 @@
 
 Si vous utilisez les binaires, il faut simplement télécharger la nouvelle version.
 
-Si vous utilisez le code source, il faut vous assurer la dernière version quotidienne de Rust.
+Si vous utilisez le code source, télécharger la version nightly-2022-11-14 de Rust :
+
+    rustup install nightly-2022-11-14
 
 Utiliser par défaut la dernière version quotidienne :
 
-    rustup default nightly
-
-Mise à jour de Rust :
-
-    rustup update
+    rustup default nightly-2022-11-14
 
 Ensuite :
 
