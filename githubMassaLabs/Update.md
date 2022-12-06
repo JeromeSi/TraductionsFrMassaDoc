@@ -1,5 +1,7 @@
 # Mise à jour d'un nœud
 
+Mise à jour pour la version 17.1 de Massa
+
 Si vous utilisez les binaires, il faut simplement télécharger la nouvelle version.
 
 Si vous utilisez le code source, télécharger la version nightly-2022-11-14 de Rust :
