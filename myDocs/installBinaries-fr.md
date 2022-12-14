@@ -26,7 +26,7 @@ Sans interface graphique, on utilise **wget** pour télécharger :
 
 Si **tar** n'est pas présent, on l'installe avec **sudo apt install tar**
 
-On utilise **tar** sur notre archive : **tar xzf massa_TEST.XX.X_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
+On utilise **tar** sur notre archive : **tar xzf massa_TEST.17.2_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
 
 Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se trouve tout le nécessaire.
 
@@ -107,7 +107,7 @@ Vous lisez :
 
 - *Error while bootstrapping: `massa_signature` error Signature error* : mauvais signe car je n'ai jamais vu ça avec la version binaire, à part la réinstallation rien à proposer
 
-- *Your last bootstrap on this server was ...s ago and you have to wait ...s before retrying* : on a droit à un bootstrap toutes les 12h (ou 8h), il faut attendre de tomber sur un serveur ou le bootstrap n'a pas été tenté ou se trouver une liste de node pour le faire mais ils ne seront pas officiels
+- *Your last bootstrap on this server was ...s ago and you have to wait ...s before retrying* : on a droit à un bootstrap toutes les 12h, il faut attendre de tomber sur un serveur ou le bootstrap n'a pas été tenté ou se trouver une liste de node pour le faire mais ils ne seront pas officiels
 
 - autre chose : allez poser votre question à la communauté [Massa](https://massa.net/community)
 
