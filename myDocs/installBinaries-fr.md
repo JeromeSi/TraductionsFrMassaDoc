@@ -48,17 +48,18 @@ Si vous voulez activer votre pare-feu, il faut commencer par autoriser les liais
 
 Il faut ouvrir 3 ports (33244, 33245 et 33035) comme suit:
 
-- **sudo ufw allow 31244**
+- **sudo ufw allow 31244** (permet d'être contacté par d'autres nodes présents dans la blockchain)
 
-- **sudo ufw allow 31245**
+- **sudo ufw allow 31245** (permet le bootstrap sur le node et d'être considéré comme routable par MassaBot)
 
-- **sudo ufw allow 333035**
+- **sudo ufw allow 333035** (permet d'obtenir des informations sur le node depuis un site externe [lien en](https://docs.massa.net/en/latest/testnet/community-resources.html#tracking-the-activity-of-a-node))
 
 Il faut aussi connaître son IP publique pour la noter dans le fichier **~/massa/massa-node/config/config.toml** que l'on obtient avec **host myip.opendns.com resolver1.opendns.com** Elle est sur la dernière ligne.
 
 Le fichier **~/massa/massa-node/config/config.toml** doit contenir :
 
 `[network]`
+
 `routable_ip = "Votre IPv4 ou IPv6 entourée de guillemet"`
 
 On fait l'édition avec **nano** : **nano ~/massa/massa-node/config/config.toml**
@@ -109,7 +110,7 @@ Vous lisez :
 
 - *Your last bootstrap on this server was ...s ago and you have to wait ...s before retrying* : on a droit à un bootstrap toutes les 12h, il faut attendre de tomber sur un serveur ou le bootstrap n'a pas été tenté ou se trouver une liste de node pour le faire mais ils ne seront pas officiels
 
-- autre chose : allez poser votre question à la communauté [Massa](https://massa.net/community)
+- autre chose : allez poser votre question à la communauté [Massa](https://massa.net/community) ou d'autres informations [lien FR](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations-fr.md)
 
 ## 8. Acheter des rolls
 
