@@ -29,7 +29,7 @@ Maintenant, il faut générer une nouvelle clé d’appairage (et l’associer �
 
 **Ou, si vous en avez déjà une venant d’un précédent wallet**, vous pouvez ajouter manuellement une clé d’appairage :
 
-`wallet_add_keys <your_key>`
+`wallet_add_secret_keys <your_key>`
 
 On obtient la liste des clé de votre portefeuille accessible avec :
 
