@@ -236,4 +236,6 @@ Pour faire cela, éditer ou créer si absent le fichier  `massa-node/config/conf
 ```
 Puis redémarrer votre nœud.
 
+Suivant : [Tutorials and resources from the community](https://docs.massa.net/en/latest/testnet/community-resources.html)
+
 Précédent : [Programme de récompenses](./rewards.md) / [Testnet Stacking Rewards Program](https://github.com/massalabs/massa/blob/main/docs/testnet/rewards.rst)
