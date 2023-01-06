@@ -35,7 +35,7 @@ Vous pouvez aussi utiliser la commande [`screen`](https://help.ubuntu.com/commun
 
 Nous essayons d'inclure, à la fois, les EVM pour la rétro compatibilité et un moteur pour des smart contracts spécifiques utilisant pleinement le protocole Massa. Nous souhaitons aussi les développer pour des langages plus utilisés et introduire quelques innovations.
 
-Nous finissons l'implémentation de la première version du moteur de smart contract qui sera intégré prochainement. (N.d.T. : c'est fait !) 
+Notre système de smart contracts est opérationnel et fonctionne dans le testnet. Vous pouvez trouvez la documentation complète [ici](https://docs.massa.net/en/latest/web3-dev/smart-contracts.html#web3-dev-sc)
 
 Nous avons prévu quelques fonctionnalités intéressantes, comme le réveil autonome, un peu comme ce qui est annoncé [ici](https://arxiv.org/pdf/2102.10784.pdf).
 
@@ -61,7 +61,7 @@ Veuillez bien noter que  que la monnaie du testnet n'a AUCUNE valeur. Ceci dit, 
 
 Le fichier de clé de staking  dans le dossier du nœud et le fichier du portefeuille dans le dossier du client ne sont actuellement pas cryptés mais cela arrivera bientôt. De même, l'API de communication entre le client et le nœud n'est pas cryptée pour le moment mais cela sera fait pour le Mainnet.
 
-Notez que les nœuds e connaissent et ne font pas confiance aux autres et n'échangent jamais d'informations sensibles donc le cryptage n'est pas nécessaire à ce niveau.
+Notez que les nœuds ne connaissent et ne font pas confiance aux autres et n'échangent jamais d'informations sensibles donc le cryptage n'est pas nécessaire à ce niveau.
 Une vérification ("handshake") est faite à la connexion avec un autre pair. Nous signons des données aléatoires que le pair a transmis avec notre clé d'appairage et la même chose pour l'autre pair. Les données sont signé par le créateur et pas par le nœud qui les envoie.
 Durant la connexion au réseau Massa ("bootstrap"), la vérification est asymétrique. Nous connaissons la clé publique du nœud de *bootstrap* et nous attendons des messages signés de lui mais nous ne communiquons pas notre clé publique ni nous ne signons le seul message que nous envoyons (uniquement des données aléatoires).
 
@@ -185,7 +185,11 @@ Problème de temps de réponse ("ping") trop long
 
 Vérifier la qualité de la connexion Internet. Essayer d'augmenter la valeur de "max_ping"  en l'ajoutant dans le fichier `massa-node/config/config.toml` :
 
-- éditer le fichier `massa-node/config/config.toml` (ou créer le s'il est absent) avec le contenu suivant : <br>`[bootstrap]`<br>` max_ping = 10000 # try 10000 for example`
+- éditer le fichier `massa-node/config/config.toml` (ou créer le s'il est absent) avec le contenu suivant : 
+```toml
+[bootstrap]
+  max_ping = 10000 # try 10000 for example
+```
 
 L'API ne démarre pas
 ---------------
@@ -195,18 +199,18 @@ L'API ne démarre pas
   C'est, probablement, parce que les ports 33034/33035 sont déjà utilisés sur votre machine. Vous devirez changer les ports utilisés pour le client et le l'API dans les fichiers de configuration :
   
   - créer ou éditer le fichier `massa-node/config/config.toml` pour changer le port utiliser par l'API :
-    
+```toml
       [api]
       bind_private = "127.0.0.1:33034" # changer le port 33034 pour un autre
       bind_public = "0.0.0.0:33035" # changer le port 33035 pour un autre
-
+```
 - créer ou éditer le fichier `massa-client/config/config.toml` et utiliser les même ports :
-  
+```toml
       [default_node]
       ip = "127.0.0.1"
       private_port = 33034 # changer le port 33034 pour celui choisi avec bind_private
       public_port = 33035 # changer le port 33035 pour celui choisi avec  bind_public
-
+```
 Raspberry Pi : le problème "Thread 'main' panicked"
 ---------------------------------------------
 
@@ -223,13 +227,13 @@ Désactiver la prise en charge de l'IPv6
 Si votre OS, machine virtuelle ou fournisseur ne supporte par l'IPv6, essayer de désactiver la prise en charge de l'IPv6 par votre nœud Massa.
 
 Pour faire cela, éditer ou créer si absent le fichier  `massa-node/config/config.toml` avec les lignes suivantes :
-
+```toml
         [network]
             bind = "0.0.0.0:31244"
     
         [bootstrap]
             bind = "0.0.0.0:31245"
-
+```
 Puis redémarrer votre nœud.
 
 Précédent : [Programme de récompenses](./rewards.md) / [Testnet Stacking Rewards Program](https://github.com/massalabs/massa/blob/main/docs/testnet/rewards.rst)
