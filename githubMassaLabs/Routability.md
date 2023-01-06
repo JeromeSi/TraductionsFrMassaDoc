@@ -19,9 +19,11 @@ Avec Massa, les nœuds ne sont pas accessible par défaut et requiert une interv
   + si routeur utilise le DHCP, vous pouvez configurer votre routeur qu’il attribue toujours la même IP à l’ordinateur du nœud en utilisant l’adresse MAC (une adresse IP local qui ne change pas, en général du genre 192.168.X.XXX)
   + sur le routeur, les connexions entrantes TCP des ports 31244 et 31245 doivent être redirigées vers l’adresse IP local de l’ordinateur du nœud
 + Modifier la configuration du parefeu pour autoriser les connexions entrantes TCP sur les ports 31244 et 31245 (exemple : `sudo ufw allow 31244 && sudo ufw allow 31245` avec Ubuntu / Debian, ou configurer Windows Firewall on Windows)
-+ Il faut éditer le fichier `massa-node/config/config.toml` (ou le créer s’il n’éxiste pas) avec le contenu suivant :<br>
-  `[network]`<br>
-  `routable_ip = "AAA.BBB.CCC.DDD"`<br>
++ Il faut éditer le fichier `massa-node/config/config.toml` (ou le créer s’il n’éxiste pas) avec le contenu suivant 
+```toml
+[network]
+  routable_ip = "AAA.BBB.CCC.DDD"
+```
   ou AAA.BBB.CCC.DDD doit être remplacé par votre adresse IP publique (pas l’adresse local). IPv6 fonctionne aussi.
 + Vous devez redémarrer le nœud pour que les changements dans r massa-node/config/config.toml soient pris en compte.
 + Vous pouvez tester si vos ports sont bien ouvert en écrivant votre adresse IP publique et le port 31244 dans le site [yougetsignal](https://www.yougetsignal.com/tools/open-ports/) (même chose pour le port 31245)
@@ -29,7 +31,7 @@ Avec Massa, les nœuds ne sont pas accessible par défaut et requiert une interv
 
 ## Dernière étape
 
-+ Pour valider votre participation au programme de récompense du testnet, vous devez vous enregistrer avec votre compte Discord. Écrire quelque chose dans le canal “testnet-rewards-registration” de notre [Discord](https://discord.com/invite/massa) et notre bot MassaBot vous enverra les instruction par conversation privée. Plus d’information ici : [Testnet rewards program](https://massa.readthedocs.io/en/latest/testnet/rewards.html).
++ Pour valider votre participation au programme de récompense du testnet, vous devez vous enregistrer avec votre compte Discord. Écrire quelque chose dans le canal *testnet-rewards-registration* de notre [Discord](https://discord.com/invite/massa) et notre bot MassaBot vous enverra les instruction par conversation privée. Plus d’information ici : [Testnet rewards program](https://massa.readthedocs.io/en/latest/testnet/rewards.html).
 
 Suivant : [Programme de récompense du testnet](./rewards.md)/ [Testnet rewards program](https://massa.readthedocs.io/en/latest/testnet/rewards.html)
 
