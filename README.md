@@ -13,7 +13,7 @@ Bonne lecture !
 
 + [Installation d'un nœud](githubMassaLabs/Installing_a_node.md)
 + [Démarrer un nœud](githubMassaLabs/Running_a_node.md)
-+ [Mise à jour d'un nœud](./Update.md)
++ [Mise à jour d'un nœud](githubMassaLabs/Update.md)
 + [Création d’un portefeuille Massa](githubMassaLabs/Creating_a_massa_wallet.md)
 + [Participation](githubMassaLabs/Staking.md)
 + [Accessibilité](githubMassaLabs/Routability.md)
