@@ -52,6 +52,6 @@ Si vous souhaitez utiliser le code source pour compiler, il faut suivre les éta
 
 + Ouvrir “Windows Power Shell”
   + Cloner la dernière version : `git clone --branch testnet https://github.com/massalabs/massa.git`
-  + Changer la version par défaut de Rust pour la version quotidienne : `rustup default nightly-2022-11-14`
+  + Changer la version par défaut de Rust pour la version quotidienne : `rustup default nightly-2022-12-24`
 
 Suivant : [Démarrer un nœud](./Running_a_node.md) / [Running a node](https://docs.massa.net/en/latest/testnet/running.html)
