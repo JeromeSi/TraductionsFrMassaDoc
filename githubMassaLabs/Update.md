@@ -1,16 +1,16 @@
 # Mise à jour d'un nœud
 
-Mise à jour pour la version 17.1 de Massa
+Mise à jour pour la version 18.0 de Massa
 
 Si vous utilisez les binaires, il faut simplement télécharger la nouvelle version.
 
-Si vous utilisez le code source, télécharger la version nightly-2022-11-14 de Rust :
+Si vous utilisez le code source, télécharger la version nightly-2022-12-24 de Rust :
 
-    rustup install nightly-2022-11-14
+    rustup install nightly-2022-12-24
 
 Utiliser par défaut la dernière version quotidienne :
 
-    rustup default nightly-2022-11-14
+    rustup default nightly-2022-12-24
 
 Ensuite :
 
