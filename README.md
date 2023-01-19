@@ -25,3 +25,10 @@ Bonne lecture !
 + [Know the founders](https://medium.com/@dockyr/massa-rencontrez-les-fondateurs-bfb1d78c013e)
 + [Massa raised €5 million for the 1st truly decentralized blockchain](https://medium.com/@dockyr/massa-l%C3%A8ve-5-millions-deuros-pour-son-projet-de-1%C3%A8re-blockchain-v%C3%A9ritablement-d%C3%A9centralis%C3%A9e-f2a955b7f4c6)
 + [Massa Introduction](https://medium.com/@dockyr/pr%C3%A9s%C3%A9sentation-du-projet-de-blockchain-massa-e1564495d548)
+
+# Autres documents d'aide à propos de Massa
+
++ FR : [Liste des erreurs lors du bootstrap](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations-fr.md#liste-des-erreurs-lors-du-bootstrap)
++ EN : [List of bootstrap errors](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations.md#list-of-bootstrap-errors)
++ FR : [Installation d'un node avec nohup](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr.md#installation-dun-node-avec-nohup)
+
