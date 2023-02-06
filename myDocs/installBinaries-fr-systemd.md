@@ -59,16 +59,70 @@ Il faut aussi connaître son IP publique pour la noter dans le fichier **~/massa
 Le fichier **~/massa/massa-node/config/config.toml** doit contenir :
 
 `[network]`
-
 `routable_ip = "Votre IPv4 ou IPv6 entourée de guillemet"`
 
 On fait l'édition avec **nano** : **nano ~/massa/massa-node/config/config.toml**
 
+Avec **nano**, on enregistre avec [Ctrl]+[o] et on ferme avec [Ctrl]+[x]
+
 ## 5. Mise en marche du node avec *systemd*
 
-On se place dans le dossier **~/massa/massa-node/** avec **cd ~/massa/massa-node/**
+### 1. Création du fichier pour le service *massad*
 
-On exécute **massa-node** en le détachant du terminal avec **nohup ./massa-node -p leMotDePasse &>> ./logs.txt &** Il ne doit s'afficher que le numéro associé au processus si tout est ok.
+Il faut créer le fichier **/etc/systemd/system/massad.service** avec **sudo nano /etc/systemd/system/massad.service**.
+Dans ce fichier, on écrit (ou on copie-colle) :
+
+`[Unit]
+Description=Massa
+NodeAfter=network-online.target
+[Service]
+User=rootWorkingDirectory=/home/[USER]/massa/massa-node
+ExecStart=/home/[USER]/massa/massa-node/massa-node -p [PASSWORD]
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target`
+
+Avec **nano**, on enregistre avec [Ctrl]+[o] et on ferme avec [Ctrl]+[x]
+
+On rend le fichier **/etc/systemd/system/massad.service** exécutable par tous le monde avec :
+
+`sudo chmod 777 /etc/systemd/system/massad.service`
+
+### 2. Lancement du service *massad*
+
+On démarre le service *Massa* avec :
+
+`sudo systemctl start massad`
+
+### 3. Vérification du fonctionnement du service *massad*
+
+On vérifie que tout fonctionne avec :
+
+`sudo systemctl status massad`
+
+On ressort de cet affichage avec [Ctrl]+[c]
+
+### 4. Lecture du fichier de log du node *Massa*
+
+On utilise :
+
+`sudo journalctl -u massad -f`
+
+On ressort de cet affichage avec [Ctrl]+[c]
+
+### 5. Arrêt du service *massad*
+
+On arrête le service *Massa* avec :
+
+`sudo systemctl stop massad`
+
+Attention ! Si vous arrêtez le node avec `node_stop`dans le client, le *systemd* va le redémarrer automatiquement.
+
+### 6. Mais j'ai déjà vu ça quelque part...
+
+J'ai repris le travail qui se trouve ici : [Manage your Massa node with SystemD]([Manage your Massa node with SystemD - MassAdopted.com](https://massadopted.com/manage-your-massa-node-with-systemd/))
 
 ## 6. Création du wallet
 
@@ -137,3 +191,5 @@ Voir la doc :
 - [en anglais](https://docs.massa.net/en/latest/testnet/rewards.html)
 
 - [en français](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/githubMassaLabs/rewards.md)
+  
+  
