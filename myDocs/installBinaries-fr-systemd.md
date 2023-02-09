@@ -67,26 +67,49 @@ Avec **nano**, on enregistre avec [Ctrl]+[o] et on ferme avec [Ctrl]+[x]
 
 ## 5. Mise en marche du node avec *systemd*
 
+### 0. Introduction
+
+Un service est un logiciel qui doit toujours 
+
+Un service est géré par l'OS et le redémarre dès qu'il cesse de fonctionner.
+
 ### 1. Création du fichier pour le service *massad*
 
 Il faut créer le fichier **/etc/systemd/system/massad.service** avec **sudo nano /etc/systemd/system/massad.service**.
 Dans ce fichier, on écrit (ou on copie-colle) :
 
-`[Unit]
-Description=Massa
-NodeAfter=network-online.target
-[Service]
-User=rootWorkingDirectory=/home/[USER]/massa/massa-node
-ExecStart=/home/[USER]/massa/massa-node/massa-node -p [PASSWORD]
-Restart=on-failure
-RestartSec=3
-LimitNOFILE=65535
-[Install]
-WantedBy=multi-user.target`
+`[Unit]`
+
+`Description=Massa`
+
+`NodeAfter=network-online.target`
+
+`[Service]`
+
+`User=rootWorkingDirectory=/home/[USER]/massa/massa-node`
+
+`ExecStart=/home/[USER]/massa/massa-node/massa-node -p LeMotDePasse`
+
+`Restart=on-failure`
+
+`RestartSec=3`
+
+`LimitNOFILE=65535`
+
+`[Install]`
+
+`WantedBy=multi-user.target`
+
+Adaptation à votre situation :
++ Il faut remplacer `[USER]` par l'identifiant de l'utilisateur qui fait fonctionner Massa.
+
++ Il faut remplacer `LeMotDePasse` par le mot de passe que vous allez utiliser pour exécuter `massa-node`
+
++ Si vous utilisez `root`pour faire fonctionner Massa (déconseiller) , il faut changer `/home/[USER]`par `/root
 
 Avec **nano**, on enregistre avec [Ctrl]+[o] et on ferme avec [Ctrl]+[x]
 
-On rend le fichier **/etc/systemd/system/massad.service** exécutable par tous le monde avec :
+On rend le fichier **/etc/systemd/system/massad.service** exécutable par tout le monde avec :
 
 `sudo chmod 777 /etc/systemd/system/massad.service`
 
