@@ -1,6 +1,6 @@
 # Installation d'un node avec *nohup*
 
-Basée sur l'épisode 19.2
+Basée sur l'épisode 20.0
 
 ## Introduction
 
@@ -20,13 +20,13 @@ Sans interface graphique, on utilise **wget** pour télécharger :
 
 - on va dans le dossier de l'utilisateur : **cd**
 
-- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.19.2/massa_TEST.19.2_release_linux.tar.gz** Il faudra remplacer les **XX.X** par la version recherchée
+- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.20.0/massa_TEST.20.0_release_linux.tar.gz** Il faudra remplacer les **XX.X** par la version recherchée
 
 ## 2. Décompression de l'archive
 
 Si **tar** n'est pas présent, on l'installe avec **sudo apt install tar**
 
-On utilise **tar** sur notre archive : **tar xzf massa_TEST.19.2_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
+On utilise **tar** sur notre archive : **tar xzf massa_TEST.20.0_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
 
 Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se trouve tout le nécessaire.
 
@@ -35,6 +35,8 @@ Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se 
 Vous devez installer la bibliothèque **libssl1** avec **sudo apt install libssl1**
 
 ## 4. Mise en place de l'accessibilité du node
+
+### 1. Sur la machine du node
 
 On commence par vérifier si on a ou pas un pare-feu actif : **sudo ufw status**
 
@@ -62,7 +64,19 @@ Le fichier **~/massa/massa-node/config/config.toml** doit contenir :
 
 `routable_ip = "Votre IPv4 ou IPv6 entourée de guillemet"`
 
+`#Il faut cette nouvelle ligne pour que cela fonctionne`
+
 On fait l'édition avec **nano** : **nano ~/massa/massa-node/config/config.toml**
+
+Note : Si vous êtes en IPv6, votre IP change peut-être continuellement, c'est la faute au [SLAAC]([IPv6 — Wikipédia](https://fr.wikipedia.org/wiki/IPv6#Attribution_des_adresses_IPv6). Vous allez devoir fixer manuellement une adresse IPv6 à votre node).
+
+### 2. Sur la box, éventuellement
+
+La façon de faire va dépendre de chaque opérateur
+
+Si vous êtes en IPv4, il faut faire de la redirection de port sur la box.
+
+Si vous êtes en IPv6, il faut ouvrir un port sur le pare-feu de la box pour l'adresse IPv6 du node.
 
 ## 5. Mise en marche du node avec *nohup*
 

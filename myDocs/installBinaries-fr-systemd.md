@@ -1,6 +1,6 @@
 # Installation d'un node avec *systemd*
 
-Basée sur l'épisode 19.2
+Basée sur l'épisode 20.0
 
 ## Introduction
 
@@ -20,13 +20,13 @@ Sans interface graphique, on utilise **wget** pour télécharger :
 
 - on va dans le dossier de l'utilisateur : **cd**
 
-- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.19.2/massa_TEST.19.2_release_linux.tar.gz** Il faudra remplacer les **XX.X** par la version recherchée
+- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.20.0/massa_TEST.20.0_release_linux.tar.gz** Il faudra remplacer les **XX.X** par la version recherchée
 
 ## 2. Décompression de l'archive
 
 Si **tar** n'est pas présent, on l'installe avec **sudo apt install tar**
 
-On utilise **tar** sur notre archive : **tar xzf massa_TEST.19.2_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
+On utilise **tar** sur notre archive : **tar xzf massa_TEST.20.0_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
 
 Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se trouve tout le nécessaire.
 
@@ -35,6 +35,8 @@ Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se 
 Vous devez installer la bibliothèque **libssl1** avec **sudo apt install libssl1**
 
 ## 4. Mise en place de l'accessibilité du node
+
+### 1. Sur la machine du node
 
 On commence par vérifier si on a ou pas un pare-feu actif : **sudo ufw status**
 
@@ -52,26 +54,41 @@ Il faut ouvrir 3 ports (33244, 33245 et 33035) comme suit:
 
 - **sudo ufw allow 31245** (permet le bootstrap sur le node et d'être considéré comme routable par MassaBot)
 
-- **sudo ufw allow 333035** (permet d'obtenir des informations sur le node depuis un site externe [lien en](https://docs.massa.net/en/latest/testnet/community-resources.html#tracking-the-activity-of-a-node))
+- **sudo ufw allow 33035** (permet d'obtenir des informations sur le node depuis un site externe [lien en](https://docs.massa.net/en/latest/testnet/community-resources.html#tracking-the-activity-of-a-node))
 
 Il faut aussi connaître son IP publique pour la noter dans le fichier **~/massa/massa-node/config/config.toml** que l'on obtient avec **host myip.opendns.com resolver1.opendns.com** Elle est sur la dernière ligne.
 
 Le fichier **~/massa/massa-node/config/config.toml** doit contenir :
 
 `[network]`
+
 `routable_ip = "Votre IPv4 ou IPv6 entourée de guillemet"`
+
+`#Il faut cette nouvelle ligne pour que cela fonctionne`
 
 On fait l'édition avec **nano** : **nano ~/massa/massa-node/config/config.toml**
 
 Avec **nano**, on enregistre avec [Ctrl]+[o] et on ferme avec [Ctrl]+[x]
 
+Note : Si vous êtes en IPv6, votre IP change peut-être continuellement, c'est la faute au [SLAAC]([IPv6 — Wikipédia](https://fr.wikipedia.org/wiki/IPv6#Attribution_des_adresses_IPv6). Vous allez devoir fixer manuellement une adresse IPv6 à votre node.
+
+### 2. Sur la box, éventuellement
+
+La façon de faire va dépendre de chaque opérateur
+
+Si vous êtes en IPv4, il faut faire de la redirection de port sur la box.
+
+Si vous êtes en IPv6, il faut ouvrir un port sur le pare-feu de la box pour l'adresse IPv6 du node.
+
 ## 5. Mise en marche du node avec *systemd*
 
 ### 0. Introduction
 
-Un service est un logiciel qui doit toujours 
+Un service est un logiciel qui doit toujours fonctionner.
 
 Un service est géré par l'OS et le redémarre dès qu'il cesse de fonctionner.
+
+Le service qui sera charge de surveiller *massa-node* est nommé **massad**.
 
 ### 1. Création du fichier pour le service *massad*
 
@@ -80,13 +97,17 @@ Dans ce fichier, on écrit (ou on copie-colle) :
 
 `[Unit]`
 
-`Description=Massa`
+`Description=Massa Node`
 
-`NodeAfter=network-online.target`
+`After=network-online.target`
 
 `[Service]`
 
-`User=rootWorkingDirectory=/home/[USER]/massa/massa-node`
+`User=root`
+
+`PermissionsStartOnly=true`
+
+`WorkingDirectory=/home/[USER]/massa/massa-node`
 
 `ExecStart=/home/[USER]/massa/massa-node/massa-node -p LeMotDePasse`
 
@@ -101,11 +122,12 @@ Dans ce fichier, on écrit (ou on copie-colle) :
 `WantedBy=multi-user.target`
 
 Adaptation à votre situation :
+
 + Il faut remplacer `[USER]` par l'identifiant de l'utilisateur qui fait fonctionner Massa.
 
 + Il faut remplacer `LeMotDePasse` par le mot de passe que vous allez utiliser pour exécuter `massa-node`
 
-+ Si vous utilisez `root`pour faire fonctionner Massa (déconseiller) , il faut changer `/home/[USER]`par `/root
++ Si vous utilisez `root`pour faire fonctionner Massa (déconseiller) , il faut changer `/home/[USER]`par `/root`
 
 Avec **nano**, on enregistre avec [Ctrl]+[o] et on ferme avec [Ctrl]+[x]
 
@@ -115,7 +137,7 @@ On rend le fichier **/etc/systemd/system/massad.service** exécutable par tout l
 
 ### 2. Lancement du service *massad*
 
-On démarre le service *Massa* avec :
+On démarre le service *Massad* avec :
 
 `sudo systemctl start massad`
 
@@ -137,7 +159,7 @@ On ressort de cet affichage avec [Ctrl]+[c]
 
 ### 5. Arrêt du service *massad*
 
-On arrête le service *Massa* avec :
+On arrête le service *massad* avec :
 
 `sudo systemctl stop massad`
 
@@ -155,7 +177,7 @@ On exécute **massa-client** avec **./massa-client -p leMotDePasse**
 
 Vous êtes désormais dans le client qui vient d'afficher l'aide. On génère le wallet avec **wallet_generate_secret_key**
 
-On en profite pour déclarer notre wallet prêt à staker des blocs avec **node_add_staking_secret_keys VotreCléSecreteIci**
+On en profite pour déclarer notre wallet prêt à staker des blocs avec **node_start_staking VotreAdresseIci**
 
 On peut vérifier que l'opération s'est bien passée avec **node_get_staking_addresses**
 
@@ -214,5 +236,3 @@ Voir la doc :
 - [en anglais](https://docs.massa.net/en/latest/testnet/rewards.html)
 
 - [en français](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/githubMassaLabs/rewards.md)
-  
-  
