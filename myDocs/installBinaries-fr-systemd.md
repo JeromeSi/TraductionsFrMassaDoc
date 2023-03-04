@@ -197,7 +197,7 @@ La commande **get_status** renvoie plein d'informations quand le node est connec
 
 Si **get_status** renvoie un message d'erreur en rouge, il y a un problème.
 
-On va chercher les informations dans les dernières lignes du fichier de log avec **tail ~/massa/massa-node/logs.txt**
+On va chercher les informations dans les dernières lignes du fichier de log avec **sudo journalctl -u massad**
 
 Vous lisez :
 
