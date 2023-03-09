@@ -18,8 +18,11 @@ Vous trouverez la liste des nodes officiels dans le fichier **massa/massa-node/b
 6. **Error while bootstrapping: `massa_signature` error Signature error : Signature verification failed: signature error: Verification equation was not satisfied** : Vérifier le node ID du node cible dans le fichier ou il y a la liste des nodes de bootstrap. Si vous avez ajouté des nodes pour le bootstrap, c'est une erreur qui a pu apparaître quand vous avez fait un copier/coller du node ID. Vous pouvez effacer la ligne du node problématique ou commenter la ligne avec **#** au début.
 7. **Error while connecting to bootstrap server: io error: Connection refused (os error 111)** : le node officiel ne répond pour une raison inconnue
 8. **WARN massa_bootstrap::client: Error while connecting to bootstrap server: io error: Network is unreachable (os error 101)** : vous avez sûrement une IPv4 et votre node tente un bootstrap sur un node officiel avec une IPv6. Une IPv4 ne peut contacter que les IPv4 (Voir **Notes**). On peut ajouter ces lignes dans le fichier **massa/massa-node/config/config.toml** :
+
 `[bootstrap]`
-`# force the bootstrap protocol to use: "IPv4", "IPv6", or "Both". Defaults to using both protocols.`
+
+`    # force the bootstrap protocol to use: "IPv4", "IPv6", or "Both". Defaults to using both protocols.`
+
 `    bootstrap_protocol = "IPv4"`
  
 ## Notes
