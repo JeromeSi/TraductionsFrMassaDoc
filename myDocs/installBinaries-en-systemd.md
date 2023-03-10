@@ -150,7 +150,14 @@ We use :
 
 We leave this display with [Ctrl]+[c]
 
-### 5. Stop *massad* service
+### 5. Read the node log file *Massa* between 2 moments
+
+On utilise :
+
+`sudo journalctl -u massad -f --since="2023-03-10 15:45" --until="2023-03-10 16:45"
+
+
+### 6. Stop *massad* service
 
 We stop the *massad* service with :
 
