@@ -121,6 +121,22 @@ Dans ce fichier, on écrit (ou on copie-colle) :
 
 `WantedBy=multi-user.target`
 
+
+	[Unit]
+	Description=Massa Node
+	After=network-online.target
+	[Service]
+	User=root
+	PermissionsStartOnly=true`
+	WorkingDirectory=/home/[USER]/massa/massa-node
+	ExecStart=/home/[USER]/massa/massa-node/massa-node -p LeMotDePasse
+	Restart=on-failure
+	RestartSec=3
+	LimitNOFILE=65535
+	[Install]
+	WantedBy=multi-user.target
+
+
 Adaptation à votre situation :
 
 + Il faut remplacer `[USER]` par l'identifiant de l'utilisateur qui fait fonctionner Massa.
