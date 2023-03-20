@@ -5,7 +5,7 @@ Le bootstrap est une étape. Quand vous faites un bootstrap, votre node se synch
 ## Ou puis-je faire un bootstrap ?
 Au départ, vous pouvez faire le bootstrap à partir de la liste des nodes officiels.
 
-Vous trouverez la liste des nodes officiels dans le fichier **massa/massa-node/base_config/config.toml** à la section **[bootstrap]**. 
+Vous trouverez la liste des nodes officiels dans le fichier **massa/massa-node/base_config/config.toml** à la section **[bootstrap]**.
 
 ## Liste de quelques erreurs lors du bootstrap (et ce que l'on peut faire)
 1. **Bootstrap from server IPtargetNode:31245 failed. Your node will try to bootstrap from another server in 60s.** : votre node doit attendre **60s** avant de tenter un nouveau bootstrap sur un autre node.
@@ -19,12 +19,12 @@ Vous trouverez la liste des nodes officiels dans le fichier **massa/massa-node/b
 7. **Error while connecting to bootstrap server: io error: Connection refused (os error 111)** : le node officiel ne répond pour une raison inconnue
 8. **WARN massa_bootstrap::client: Error while connecting to bootstrap server: io error: Network is unreachable (os error 101)** : vous avez sûrement une IPv4 et votre node tente un bootstrap sur un node officiel avec une IPv6. Une IPv4 ne peut contacter que les IPv4 (Voir **Notes**). On peut ajouter ces lignes dans le fichier **massa/massa-node/config/config.toml** :
 
-`[bootstrap]`
+```toml
+[bootstrap]
+    # force the bootstrap protocol to use: "IPv4", "IPv6", or "Both". Defaults to using both protocols.
+    bootstrap_protocol = "IPv4"
+ ```
 
-`    # force the bootstrap protocol to use: "IPv4", "IPv6", or "Both". Defaults to using both protocols.`
-
-`    bootstrap_protocol = "IPv4"`
- 
 ## Notes
 1. Si vous êtes en IPv4, vous ne pouvez pas faire un bootstrap sur un node cible en IPv6, seulement avec une IPv4
 2. Si vous êtes en IPv6, vous pouvez faire un bootstrap sur des node en IPv6 ou IPv4

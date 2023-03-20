@@ -58,8 +58,11 @@ You must also know your public IP to write it in the file **~/massa/massa-node/c
 
 The file **~/massa/massa-node/config/config.toml** must contain :
 
-`[network]`
-`routable_ip = "Your IPv4 or IPv6 quoted-quote"`
+```toml
+[network]
+	routable_ip = "Your IPv4 or IPv6 quoted-quote"
+#You need to a new line after the line with IP
+```
 
 We edit with **nano** : **nano ~/massa/massa-node/config/config.toml**
 
@@ -90,29 +93,20 @@ The service that will be responsible for monitoring *massa-node* is named **mass
 The file **/etc/systemd/system/massad.service** must be created with **sudo nano /etc/systemd/system/massad.service**.
 In this file, we write (or make a copy-paste) :
 
-`[Unit]`
-
-`Description=Massa Node`
-
-`After=network-online.target`
-
-`[Service]`
-
-`User=root`
-
-`WorkingDirectory=/home/[USER]/massa/massa-node`
-
-`ExecStart=/home/[USER]/massa/massa-node/massa-node -p YourPassword`
-
-`Restart=on-failure`
-
-`RestartSec=3`
-
-`LimitNOFILE=65535`
-
-`[Install]`
-
-`WantedBy=multi-user.target`
+```desktop
+[Unit]
+	Description=Massa Node
+	After=network-online.target
+[Service]
+	User=root
+	WorkingDirectory=/home/[USER]/massa/massa-node
+	ExecStart=/home/[USER]/massa/massa-node/massa-node -p YourPassword
+	Restart=on-failure
+	RestartSec=3
+	LimitNOFILE=65535
+[Install]
+	WantedBy=multi-user.target
+```
 
 Adapting to your situation:
 
