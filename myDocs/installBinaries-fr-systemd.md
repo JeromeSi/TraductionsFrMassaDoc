@@ -60,11 +60,11 @@ Il faut aussi connaître son IP publique pour la noter dans le fichier **~/massa
 
 Le fichier **~/massa/massa-node/config/config.toml** doit contenir :
 
-`[network]`
-
-`routable_ip = "Votre IPv4 ou IPv6 entourée de guillemet"`
-
-`#Il faut cette nouvelle ligne pour que cela fonctionne`
+```toml
+[network]
+routable_ip = "Votre IPv4 ou IPv6 entourée de guillemet"
+#Il faut cette nouvelle ligne pour que cela fonctionne
+```
 
 On fait l'édition avec **nano** : **nano ~/massa/massa-node/config/config.toml**
 
@@ -94,32 +94,6 @@ Le service qui sera charge de surveiller *massa-node* est nommé **massad**.
 
 Il faut créer le fichier **/etc/systemd/system/massad.service** avec **sudo nano /etc/systemd/system/massad.service**.
 Dans ce fichier, on écrit (ou on copie-colle) :
-
-`[Unit]`
-
-`Description=Massa Node`
-
-`After=network-online.target`
-
-`[Service]`
-
-`User=root`
-
-`PermissionsStartOnly=true`
-
-`WorkingDirectory=/home/[USER]/massa/massa-node`
-
-`ExecStart=/home/[USER]/massa/massa-node/massa-node -p LeMotDePasse`
-
-`Restart=on-failure`
-
-`RestartSec=3`
-
-`LimitNOFILE=65535`
-
-`[Install]`
-
-`WantedBy=multi-user.target`
 
 ```desktop
 [Unit]
