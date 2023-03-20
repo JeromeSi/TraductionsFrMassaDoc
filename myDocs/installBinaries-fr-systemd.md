@@ -121,11 +121,11 @@ Dans ce fichier, on écrit (ou on copie-colle) :
 
 `WantedBy=multi-user.target`
 
-```toml
-	[Unit]
+```desktop
+[Unit]
 	Description=Massa Node
 	After=network-online.target
-	[Service]
+[Service]
 	User=root
 	PermissionsStartOnly=true`
 	WorkingDirectory=/home/[USER]/massa/massa-node
@@ -133,7 +133,7 @@ Dans ce fichier, on écrit (ou on copie-colle) :
 	Restart=on-failure
 	RestartSec=3
 	LimitNOFILE=65535
-	[Install]
+[Install]
 	WantedBy=multi-user.target
 ```
 
