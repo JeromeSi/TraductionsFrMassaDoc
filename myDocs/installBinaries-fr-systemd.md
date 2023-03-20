@@ -121,7 +121,7 @@ Dans ce fichier, on écrit (ou on copie-colle) :
 
 `WantedBy=multi-user.target`
 
-
+```toml
 	[Unit]
 	Description=Massa Node
 	After=network-online.target
@@ -135,7 +135,7 @@ Dans ce fichier, on écrit (ou on copie-colle) :
 	LimitNOFILE=65535
 	[Install]
 	WantedBy=multi-user.target
-
+```
 
 Adaptation à votre situation :
 
