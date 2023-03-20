@@ -146,7 +146,7 @@ We leave this display with [Ctrl]+[c]
 
 ### 5. Read the node log file *Massa* between 2 moments
 
-On utilise :
+We use :
 
 `sudo journalctl -u massad -f --since="2023-03-10 15:45" --until="2023-03-10 16:45"
 
@@ -177,56 +177,54 @@ We can verify that the operation went well with **node_get_staking_addresses**
 
 We get out of the client with **exit**
 
-## 7. Est-ce que le node est connecté au réseau Massa ?
+## 7. Is the node connected to the Massa network ?
 
-On va utiliser le client :
+We use the client :
 
 - **cd ~/massa/massa-client/**
 
-- **./massa-client -p leMotDePasse**
+- **./massa-client -p thePassword**
 
-L'opération pour rejoindre le réseau Massa s'appelle le *bootstrap*.
+The node joins the Massa network by doing a *bootstrap*.
 
-La commande **get_status** renvoie plein d'informations quand le node est connecté au réseau Massa. Dans ce cas, rendez-vous au paragraphe expliquant l'achat d'un roll.
+The **get_status** command returns a lot of information when the node is connected to the Massa network. In this case, refer to the paragraph explaining how to buy a roll.
 
-Si **get_status** renvoie un message d'erreur en rouge, il y a un problème.
+If **get_status** returns a red error message, there is an issue."
 
-On va chercher les informations dans les dernières lignes du fichier de log avec **tail ~/massa/massa-node/logs.txt**
+We search the informations in the last lines of the log file with **sudo journalctl -u massad -f**
 
-Vous lisez :
+If you read :
 
-- *Bootstrap failed because the bootstrap server currently has no slots available.* : le bootstrap ne s'est pas fait car il n'y a pas de disponibilité des serveurs, il faut juste être patient
+- *Bootstrap failed because the bootstrap server currently has no slots available.* : the bootstrap process did not occur because the servers are unavailable; you just need to be patient.
 
-- *Error while connecting to bootstrap server: io error: Connection refused (os error 111)* : il faut vérifier que les ports sont bien ouverts (machine + box éventuellement)
+- *Error while connecting to bootstrap server: io error: Connection refused (os error 111)* : you need to check that the ports are open correctly (on the machine and possibly on the box).
 
-- *Error while bootstrapping: `massa_signature` error Signature error* : mauvais signe car je n'ai jamais vu ça avec la version binaire, à part la réinstallation rien à proposer
+- *Error while bootstrapping: `massa_signature` error Signature error* : you can try to stop the node, delete the wallet, create a new one and start the node. Or delete the boostrap list in file **~/massa/massa-node/config/config.toml** if you have add another bootstrap node.
 
-- *Your last bootstrap on this server was ...s ago and you have to wait ...s before retrying* : on a droit à un bootstrap toutes les 12h, il faut attendre de tomber sur un serveur ou le bootstrap n'a pas été tenté ou se trouver une liste de node pour le faire mais ils ne seront pas officiels
+- *Your last bootstrap on this server was ...s ago and you have to wait ...s before retrying* : You are entitled to a bootstrap every 12 hours. You can either wait to connect to a server where the bootstrap has not been attempted, or you can find a list of nodes to bootstrap from, but they may not be official.
 
-- autre chose : allez poser votre question à la communauté [Massa](https://massa.net/community) ou d'autres informations [lien FR](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations-fr.md)
+- Another option is to ask your question to the community [Massa](https://massa.net/community) Or you could look for additional information [lien EN](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations.md)
 
-## 8. Acheter des rolls
+## 8. Buy rolls
 
-Pour acheter des rolls, il faut des Massa. Durant le testnet, les Massa n'ont aucune valeur et sont distribués avec générosité.
+To buy rolls, you need Massa. During the testnet, Massa has no value and is generously distributed.
 
-Il faut utiliser l'adresse de staking que l'on obtient en utilisant **node_get_staking_addresses** dans le client ou **wallet_info** (dans ce dernier cas, c'est celle nommée *Address* )
+You need to use the staking address obtained by using **node_get_staking_addresses** in the client, or **wallet_info** (in the latter case, it is named *Address*).
 
-Les sources sont :
+The sources of Massa are :
 
-- sur [Discord](https://discord.gg/massa), il faut envoyer son adresse de staking sur le channel *#testnet-faucet*
+- on [Discord](https://discord.gg/massa), You need to send your staking address on the channel *#testnet-faucet*
 
-- sur [paranorm.pro](http://mfaucet.paranorm.pro/), il faut envoyer son adresse de staking et prouvez que l'on n'est pas un robot
+- sur [paranorm.pro](http://mfaucet.paranorm.pro/), You need to send your staking address and prove that you are not a robot
 
-Les massa arrivent en moins d'une minute sur le wallet et on peut les dépenser dès que l'on voit le `Balance: final` avec plus de 100Massa (**wallet_info** dans **massa-client**).
+The massa comes in less than 1 minute on the wallet and we can spend them as soon as we see `Balance: final` with more than 100Massa (**wallet_info** in **massa-client**).
 
-On utilise **buy_rolls adresseDeStaking 1 0** pour acheter 1 roll (qui coûte 100Mass) avec 0 fees.
+We use **buy_rolls StakingAddress 1 0** to buy one roll (cost 100Mass) with 0 fees.
 
-Il faut 3 cycles pour que le roll deviennent actif soit 1h42min24s au maximum.
+It take 3 cycles for the roll become active which is a maximum of  1h42min24s.
 
-## 9. Le système de récompenses
+## 9. The reward system
 
-Voir la doc :
+Go to the doc :
 
 - [en anglais](https://docs.massa.net/en/latest/testnet/rewards.html)
-
-- [en français](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/githubMassaLabs/rewards.md)
