@@ -33,3 +33,5 @@ Bonne lecture !
 + FR : [Installation d'un node avec nohup](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr.md#installation-dun-node-avec-nohup)
 + FR : [Installation d'un node avec systemd](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr-systemd.md)
 + FR : [Installation d'un node avec systemd pour le débogage](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr-systemd-debug.md)
++ EN : [Node installation with systemd](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-en-systemd.md)
++ EN : [Node installation with systemd in debug mode](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-en-systemd-debug.md)

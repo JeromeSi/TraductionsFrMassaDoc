@@ -1,6 +1,6 @@
 # Installation d'un node avec *systemd* en mode *debug*
 
-Basée sur l'épisode 20.1
+Basée sur l'épisode 20.2
 
 ## Introduction
 
@@ -22,13 +22,13 @@ Sans interface graphique, on utilise **wget** pour télécharger :
 
 - on va dans le dossier de l'utilisateur : **cd**
 
-- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.20.1/massa_TEST.20.1_release_linux.tar.gz**.
+- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.20.2/massa_TEST.20.2_release_linux.tar.gz**.
 
 ## 2. Décompression de l'archive
 
 Si **tar** n'est pas présent, on l'installe avec **sudo apt install tar**
 
-On utilise **tar** sur notre archive : **tar xzf massa_TEST.20.1_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
+On utilise **tar** sur notre archive : **tar xzf massa_TEST.20.2_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
 
 Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se trouve tout le nécessaire.
 
