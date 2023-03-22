@@ -32,3 +32,4 @@ Bonne lecture !
 + EN : [List of bootstrap errors](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations.md#list-of-bootstrap-errors)
 + FR : [Installation d'un node avec nohup](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr.md#installation-dun-node-avec-nohup)
 + FR : [Installation d'un node avec systemd](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr-systemd.md)
++ FR : [Installation d'un node avec systemd pour le débogage](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr-systemd-debug.md)
