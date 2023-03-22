@@ -8,7 +8,7 @@ J'utilise la version binaire sur une machine Linux.
 
 On fais passer le node en debug niveau 3. Cela génère des fichier de log d'une taille plus importante. Pour ne pas se retrouver avec une saturation de l'espace disque, on va mettre en place un quota pour le log du service Massa.
 
-Il faut compter **7Gb/heure** pour le log.
+Il faut compter **7Gb/heure** pour le log (168Gb pour 24h).
 
 Mise en garde : le fonctionnement sur un serveur mutualisé (VPS) est aléatoire.
 
@@ -146,7 +146,7 @@ Dans ce fichier, on écrit (ou on copie-colle) :
 
 ```desktop
 [Journal]
-    SystemMaxUse=10G
+    SystemMaxUse=21G
 ```
 
 Adaptation à votre situation :
