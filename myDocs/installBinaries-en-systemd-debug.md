@@ -8,7 +8,7 @@ I'm using binaries with Linux.
 
 We are going to set the node to debug level 3. This will generate larger log files. To avoid running out of disk space, we will set up a quota for the Massa service log.
 
-It takes about **7GB per hour** for logging (168GB for 24 hours).
+It takes about around **70MB per hour** for logging (1.64GB per day).
 
 ## 1. Download binaries
 
