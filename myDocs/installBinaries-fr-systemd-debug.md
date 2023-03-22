@@ -8,6 +8,8 @@ J'utilise la version binaire sur une machine Linux.
 
 On fais passer le node en debug niveau 3. Cela génère des fichier de log d'une taille plus importante. Pour ne pas se retrouver avec une saturation de l'espace disque, on va mettre en place un quota pour le log du service Massa.
 
+Il faut compter **7Gb/heure** pour le log.
+
 Mise en garde : le fonctionnement sur un serveur mutualisé (VPS) est aléatoire.
 
 ## 1. Récupération de l'archive
@@ -65,12 +67,12 @@ Il faut aussi connaître son IP publique pour la noter dans le fichier **~/massa
 Le fichier **~/massa/massa-node/config/config.toml** doit contenir :
 
 ```toml
-[network]
-    routable_ip = "Votre IPv4 ou IPv6 entourée de guillemet"
-
 [logging]
     # Logging level. High log levels might impact performance. 0: ERROR, 1: WARN, 2: INFO, 3: DEBUG, 4: TRACE
     level = 3
+
+[network]
+    routable_ip = "Votre IPv4 ou IPv6 entourée de guillemet"
 ```
 
 On fait l'édition avec **nano** : **nano ~/massa/massa-node/config/config.toml**
@@ -129,7 +131,7 @@ Adaptation à votre situation :
 
 + Si vous utilisez `root`pour faire fonctionner Massa (déconseiller) , il faut changer `/home/[USER]`par `/root`
 
-+ On peut choisir le dossier ou seront enregistrés les fichiers de log en ajoutant `LogsDirectory=/mnt/logsMassa/` dans la section `[Service]` du fichier **/etc/systemd/system/massad.service**.
++ On peut choisir le dossier ou seront enregistrés les fichiers de log en ajoutant `LogsDirectory=/mnt/logsMassa` dans la section `[Service]` du fichier **/etc/systemd/system/massad.service**.
 
 Avec **nano**, on enregistre avec [Ctrl]+[o] et on ferme avec [Ctrl]+[x]
 
