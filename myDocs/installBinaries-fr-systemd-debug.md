@@ -160,6 +160,10 @@ On démarre le service *Massad* avec :
 
 `sudo systemctl start massad`
 
+On active le service pour qu'il démarre automatiquement au démarrage de la machine :
+
+`sudo systemctl enable massad.service`
+
 ### 4. Vérification du fonctionnement du service *massad*
 
 On vérifie que tout fonctionne avec :

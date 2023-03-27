@@ -154,6 +154,10 @@ We use the *Massad* service with :
 
 `sudo systemctl start massad`
 
+We activate this service for an automatic start when OS boot :
+
+`sudo systemctl enable massad.service`
+
 ### 4. Verification of the operation of the *massad* service
 
 Check that everything works with :
