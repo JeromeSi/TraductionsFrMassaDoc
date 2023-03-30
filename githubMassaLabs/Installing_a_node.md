@@ -28,7 +28,7 @@ Si vous souhaitez utiliser le code source pour compiler, il faut suivre les éta
 + Configuration du chemin : `source $HOME/.cargo/env`
 + Vérification de la version de rust : `rustc --version`
 + Installation de la version quotidienne (nigthly) : `rustup toolchain install nightly-2023-01-30`
-+ En faire la version par défaut : `rustup default nightly-2023-01-30`
++ En faire la version par défaut : `rustup default nightly-2023-02-27`
 + Vérification de la version de rust : `rustc --version`
 + Cloner le dépôt Massa : `git clone --branch testnet https://github.com/massalabs/massa.git`
 
@@ -52,6 +52,6 @@ Si vous souhaitez utiliser le code source pour compiler, il faut suivre les éta
 
 + Ouvrir “Windows Power Shell”
   + Cloner la dernière version : `git clone --branch testnet https://github.com/massalabs/massa.git`
-  + Changer la version par défaut de Rust pour la version quotidienne : `rustup default nightly-2022-12-24`
+  + Changer la version par défaut de Rust pour la version quotidienne : `rustup default nightly-2022-02-27`
 
 Suivant : [Démarrer un nœud](./Running_a_node.md) / [Running a node](https://docs.massa.net/en/latest/testnet/running.html)

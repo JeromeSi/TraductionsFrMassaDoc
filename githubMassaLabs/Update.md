@@ -4,13 +4,13 @@ Mise à jour pour la version 18.0 de Massa
 
 Si vous utilisez les binaires, il faut simplement télécharger la nouvelle version.
 
-Si vous utilisez le code source, télécharger la version nightly-2022-12-24 de Rust :
+Si vous utilisez le code source, télécharger la version nightly-2022-02-27 de Rust :
 
-    rustup install nightly-2022-12-24
+    rustup install nightly-2022-02-27
 
 Utiliser par défaut la dernière version quotidienne :
 
-    rustup default nightly-2022-12-24
+    rustup default nightly-2022-02-27
 
 Ensuite :
 
