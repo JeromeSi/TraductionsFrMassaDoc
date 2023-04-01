@@ -16,7 +16,15 @@ You can find the officials node in the file **massa/massa-node/base_config/confi
 	1. the IP of your node isn't allow to bootstrap with the target node. The target must had your IP in the file **massa/massa-node/base_config/bootstrap_whitelist.json** and restart the target node. It is planned to add dynamically IP in the target node in version 18.
 	2. the port 31244 and/or 31245 are not open. Open it in your node and in your box or in the VPS management interface
 6. **Error while bootstrapping: `massa_signature` error Signature error : Signature verification failed: signature error: Verification equation was not satisfied** : Verify the signature of the target node in the file where is the list of the bootstrap node. If you add nodes for bootstrap, there is an error when you copy address and/or node ID. You can delete the node or comment the line with **#** at the beginning.
- 
+7. **Error while connecting to bootstrap server: io error: Connection refused (os error 111)** : we have this error when you run many **massa-node**. We close all massa-node processus with `pkill -f massa-node` and you run massa-node as usual.
+8. **WARN massa_bootstrap::client: Error while connecting to bootstrap server: io error: Network is unreachable (os error 101)** : you have an IPv4 internet address and your node try to bootstrap to an official node with an IPv6 internet address. An IPv4 can contact only IPv4 (See **Notes**). We can add in **massa/massa-node/config/config.toml** :
+
+ ```toml
+[bootstrap]
+    # force the bootstrap protocol to use: "IPv4", "IPv6", or "Both". Defaults to using both protocols.
+    bootstrap_protocol = "IPv4"
+ ```
+
 ## Notes
 1. If you have an IPv4, you can't bootstrap on target node with IPv6, only IPv4
 2. If you have an IPv6, you can bootstrap on target node with IPv6 or IPv4
