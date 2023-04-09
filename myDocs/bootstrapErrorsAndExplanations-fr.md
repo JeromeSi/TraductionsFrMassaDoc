@@ -25,6 +25,8 @@ Vous trouverez la liste des nodes officiels dans le fichier **massa/massa-node/b
     bootstrap_protocol = "IPv4"
  ```
 
+9. **WARN massa_bootstrap::client: Error while bootstrapping: general bootstrap error: Parsing Error: Failed BootstrapServerMessage deserialization / Failed MIP store deserialization / Failed MipStoreRaw der / Failed mip store stats der / Failed MipStoreStats network version counters der / Failed counters len der / Fail / Input: [15, 0, 15]** : Pour le moment, je ne sais pas d'ou viens le problème.
+
 ## Notes
 1. Si vous êtes en IPv4, vous ne pouvez pas faire un bootstrap sur un node cible en IPv6, seulement avec une IPv4
 2. Si vous êtes en IPv6, vous pouvez faire un bootstrap sur des node en IPv6 ou IPv4

@@ -8,7 +8,7 @@ On attend la sortie de l'épisode 21.0 avec impatience !
 
 J'utilise la version binaire sur une machine Linux.
 
-Mise en garde : le fonctionnement sur un serveur mutualisé (VPS) est aléatoire.
+Mise en garde : le fonctionnement sur un serveur mutualisé (VPS) est aléatoire car les ressources ne sont pas toujours disponibles si le serveur accueille beaucoup de VPS.
 
 ## 1. Récupération de l'archive
 
