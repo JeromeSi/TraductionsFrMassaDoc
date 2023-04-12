@@ -16,7 +16,7 @@ Vous trouverez la liste des nodes officiels dans le fichier **massa/massa-node/b
 	1. l'IP de votre node n'est pas autorisé à réaliser un bootstrap sur ce node. Le node cible doit avoir votre IP dans le fichier **massa/massa-node/base_config/bootstrap_whitelist.json** et avoir redémarrer. Il est prévu que l'on puisse autoriser, à la volée, des IP dans la version 18.
 	2. Les ports 31244 et/ou 31245 sont fermés. Ouvrez les sur votre node et sur votre box internet ou avec l'interface de gestion de votre VPS.
 6. **Error while bootstrapping: `massa_signature` error Signature error : Signature verification failed: signature error: Verification equation was not satisfied** : Vérifier le node ID du node cible dans le fichier ou il y a la liste des nodes de bootstrap. Si vous avez ajouté des nodes pour le bootstrap, c'est une erreur qui a pu apparaître quand vous avez fait un copier/coller du node ID. Vous pouvez effacer la ligne du node problématique ou commenter la ligne avec **#** au début.
-7. **Error while connecting to bootstrap server: io error: Connection refused (os error 111)** : on peut avoir cette erreur quand **massa-node** a été lancé plusieurs fois. On ferme toutes les processus massa-node avec `pkill -f massa-node` et il suffit de relancer comme vous savez le faire.
+7. **Error while connecting to bootstrap server: io error: Connection refused (os error 111)** : on peut avoir cette erreur quand **massa-node** a été lancé plusieurs fois ou lors de la première tentative de bootstrap. On ferme toutes les processus massa-node avec `pkill -f massa-node` et il suffit de relancer comme vous savez le faire.
 8. **WARN massa_bootstrap::client: Error while connecting to bootstrap server: io error: Network is unreachable (os error 101)** : vous avez sûrement une IPv4 et votre node tente un bootstrap sur un node officiel avec une IPv6. Une IPv4 ne peut contacter que les IPv4 (Voir **Notes**). On peut ajouter ces lignes dans le fichier **massa/massa-node/config/config.toml** :
 
 ```toml
@@ -25,7 +25,9 @@ Vous trouverez la liste des nodes officiels dans le fichier **massa/massa-node/b
     bootstrap_protocol = "IPv4"
  ```
 
-9. **WARN massa_bootstrap::client: Error while bootstrapping: general bootstrap error: Parsing Error: Failed BootstrapServerMessage deserialization / Failed MIP store deserialization / Failed MipStoreRaw der / Failed mip store stats der / Failed MipStoreStats network version counters der / Failed counters len der / Fail / Input: [15, 0, 15]** : Pour le moment, je ne sais pas d'ou viens le problème.
+9. **WARN massa_bootstrap::client: Error while bootstrapping: general bootstrap error: Parsing Error: Failed BootstrapServerMessage deserialization / Failed MIP store deserialization / Failed MipStoreRaw der / Failed mip store stats der / Failed MipStoreStats network version counters der / Failed counters len der / Fail / Input: [15, 0, 15]** : Pour le moment, je ne sais pas d'ou viens le problème mais il devrait être résolu dans la version 22.
+
+10. **Error while connecting to bootstrap server: io error: Cannot assign requested address (os error 99)** : Pour le moment, je ne sais pas d'ou viens le problème.
 
 ## Notes
 1. Si vous êtes en IPv4, vous ne pouvez pas faire un bootstrap sur un node cible en IPv6, seulement avec une IPv4

@@ -68,7 +68,7 @@ We edit with **nano** : **nano ~/massa/massa-node/config/config.toml**
 
 With **nano**, we save it with [Ctrl]+[o] and we close with [Ctrl]+[x]
 
-Note : if you sue an IPv6, your IP may change continually, it's the [SLAAC]([IPv6 — Wikipédia]([IPv6 address - Wikipedia](https://en.wikipedia.org/wiki/IPv6_address#Stateless_address_autoconfiguration))'s fault. You will have to manually set an IPv6 address to your node.
+Note : if you use an IPv6, your IP may change continually, it's the [SLAAC]([IPv6 — Wikipédia]([IPv6 address - Wikipedia](https://en.wikipedia.org/wiki/IPv6_address#Stateless_address_autoconfiguration))'s fault. You will have to manually set an IPv6 address to your node.
 
 ### 2. On the equipment of your ISP
 
