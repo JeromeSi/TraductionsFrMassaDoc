@@ -38,7 +38,7 @@ On crée une section identique dans le fichier de configuration qui nous est per
         ["IPnodeOfficiel_3:31245", "N...nodeID_du_node_officiel_3"],
         ["IPnodeOfficiel_4:31245", "N...nodeID_du_node_officiel_4"],
     ]
- ```
+```
 
 Une fois fait, on ajoute les informations de la node non officielle en conservant le formalisme :
 
@@ -70,7 +70,7 @@ Si on souhaite ne tenter un redémarrage que sur un node particulier, il suffit 
 [bootstrap]
     # force the bootstrap protocol to use: "IPv4", "IPv6", or "Both". Defaults to using both protocols.
     bootstrap_protocol = "IPv4"
- ```
+```
 
 9. **WARN massa_bootstrap::client: Error while bootstrapping: general bootstrap error: Parsing Error: Failed BootstrapServerMessage deserialization / Failed MIP store deserialization / Failed MipStoreRaw der / Failed mip store stats der / Failed MipStoreStats network version counters der / Failed counters len der / Fail / Input: [15, 0, 15]** : Pour le moment, je ne sais pas d'ou viens le problème mais il devrait être résolu dans la version 22.
 
