@@ -28,6 +28,7 @@ Bonne lecture !
 
 # Autres documents d'aide à propos de Massa
 
++ FR : [Le boostrap dans tous ces états](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapExplanations-fr.md)
 + FR : [Liste des erreurs lors du bootstrap](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations-fr.md#liste-des-erreurs-lors-du-bootstrap)
 + EN : [List of bootstrap errors](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations.md#list-of-bootstrap-errors)
 + FR : [Installation d'un node avec nohup](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr.md#installation-dun-node-avec-nohup)

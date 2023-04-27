@@ -16,7 +16,9 @@ Il faut :
 3. ajouter l'IP du node que l'on veut autoriser dans la liste blanche avec le client en utilisant la commande `node_bootstrap_whitelist add IPv4orIPv6`
 4. vérifier que l'IP a été correctement ajouter avec `node_bootstrap_whitelist` qui donne la liste des IP autorisés
 
-*Note* : depuis la version 18 (ou 19), il n'est plus utile de redémarrer le node pour que la nouvelle IP soit prise en compte.
+*Note 1* : depuis la version 18 (ou 19), il n'est plus utile de redémarrer le node pour que la nouvelle IP soit prise en compte.
+
+*Note 2* : un node doit attendre 3 minutes par défaut pour tenter un nouveau bootstrap après un échec.
 
 ## 4. Ajouter un node dans sa liste de bootstrap
 
@@ -60,7 +62,7 @@ Si on souhaite ne tenter un redémarrage que sur un node particulier, il suffit 
 3. **Error received from bootstrap server: Your last bootstrap on this server was 11h 59m 43s 895ms 540us 156ns ago and you have to wait before retrying.** : avec les nodes officiels, vous avez droit à une tentative de boostrap toutes les 12h. Dans cet exemple, vous devez attendre 11h 59m. Attendez que votre node fasse un autre essai dans 60s avec un autre node de la liste de bootstrap.
 4. **Error received from bootstrap server: Bootstrap failed because the bootstrap server currently has no slots available.** : vous êtes malchanceux, le node cible ne peut pas accepter plus de bootstrap en même temps, soyez patient et attendez, votre node fasse un autre essai dans 60s avec un autre node de la liste de bootstrap.
 5. **Error while bootstrapping: io error: early eof** : 2 possibilités
-	1. l'IP de votre node n'est pas autorisé à réaliser un bootstrap sur ce node. Le node cible doit avoir votre IP dans le fichier `massa/massa-node/base_config/bootstrap_whitelist.json`. Voir le paragraphe **3. Autoriser un bootstrap sur son node** [lien](#3-autoriser-un-bootstrap-sur-son-node)
+	1. l'IP de votre node n'est pas autorisé à réaliser un bootstrap sur ce node. Le node cible doit avoir votre IP dans le fichier `massa/massa-node/base_config/bootstrap_whitelist.json`. Voir [ce paragraphe](#3-autoriser-un-bootstrap-sur-son-node)
 	2. Les ports 31244 et/ou 31245 sont fermés. Ouvrez les sur votre node et sur votre box internet ou avec l'interface de gestion de votre VPS.
 6. **Error while bootstrapping: `massa_signature` error Signature error : Signature verification failed: signature error: Verification equation was not satisfied** : Vérifier le node ID du node cible dans le fichier ou il y a la liste des nodes de bootstrap. Si vous avez ajouté des nodes pour le bootstrap, c'est une erreur qui a pu apparaître quand vous avez fait un copier/coller du node ID. Vous pouvez effacer la ligne du node problématique ou commenter la ligne avec **#** au début.
 7. **Error while connecting to bootstrap server: io error: Connection refused (os error 111)** : on peut avoir cette erreur quand **massa-node** a été lancé plusieurs fois ou lors de la première tentative de bootstrap. On ferme toutes les processus massa-node avec `pkill -f massa-node` et il suffit de relancer comme vous savez le faire.
