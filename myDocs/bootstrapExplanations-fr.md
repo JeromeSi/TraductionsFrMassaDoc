@@ -1,4 +1,7 @@
 # Parlons bootstrap
+
+> Mis à jour pour la version 22.0
+
 ## 1. Qu'est-ce que le bootstrap ?
 Le bootstrap est une étape. Quand vous faites un bootstrap, votre node se synchronise avec les informations de la blockchain Massa.
 
@@ -29,7 +32,7 @@ La liste des nodes officielles de bootstrap se trouve dans le fichier `massa/mas
 On crée une section identique dans le fichier de configuration qui nous est personnel `massa/massa-node/config/config.toml` en copiant les informations des nodes officiels :
 
 ```toml
-[network]
+[protocol]
     routable_ip = "VotreIPv4ouIPv6"
 
 [bootstrap]
