@@ -17,12 +17,15 @@ Vous pouvez modifier cette configuration par défaut en créant le fichier *mass
 #### Démarrer le noeud
 
 Dans une première fenêtre :
-
-`cd massa/massa-node/`
+```sh
+cd massa/massa-node/
+```
 
 Démarrage du node, avec Ubuntu :
 
-`./massa-node -p VotreMotDePasse |& tee logs.txt`
+```sh
+./massa-node -p VotreMotDePasse |& tee logs.txt
+```
 
 Il faut remplacer `VotreMotDePasse` par un mot de passe que vous aurez choisi et qui sera demandé à chaque fois que vous voudrez démarrer le noeud.
 
@@ -30,11 +33,15 @@ Il faut remplacer `VotreMotDePasse` par un mot de passe que vous aurez choisi et
 
 Dans une seconde fenêtre :
 
-`cd massa/massa-client/`
+```sh
+cd massa/massa-client/
+```
 
 Démarrage du client, avec Ubuntu :
 
-`./massa-client -p VotreMotDePasse`
+```sh
+./massa-client -p VotreMotDePasse
+```
 
 Il faut remplacer `VotreMotDePasse` par un mot de passe que vous aurez choisi et qui sera demandé à chaque fois que vous voudrez démarrer le client.
 
@@ -47,17 +54,23 @@ Il faut remplacer `VotreMotDePasse` par un mot de passe que vous aurez choisi et
 
 Dans un premier terminal :
 
-`cd massa/massa-node/`
+```sh
+cd massa/massa-node/
+```
 
 Compiler (si nécessaire) et démarrer le nœud avec Ubuntu / Debian
 
-`RUST_BACKTRACE=full cargo run --release -- -p VotreMotdePasse |& tee logs.txt`
+```sh
+RUST_BACKTRACE=full cargo run --release -- -p VotreMotdePasse |& tee logs.txt
+```
 
 Remplacer `VotreMotdePasse` avec un mot de passe que vous devez conserver pour redémarrer votre nœud. Veuillez attendre que la compilation de massa-node se termine avant de continuer.
 
 Ou, avec macOS :
 
-`RUST_BACKTRACE=full cargo run --release -- -p VotreMotdePasse > logs.txt 2>&1`
+```sh
+RUST_BACKTRACE=full cargo run --release -- -p VotreMotdePasse > logs.txt 2>&1
+```
 
 Remplacer `VotreMotdePasse` avec un mot de passe que vous devez conserver pour redémarrer votre nœud.
 
@@ -65,11 +78,15 @@ Remplacer `VotreMotdePasse` avec un mot de passe que vous devez conserver pour r
 
 Dans un second terminal :
 
-`cd massa/massa-client/`
+```sh
+cd massa/massa-client/
+```
 
 Puis :
 
-`cargo run --release -- -p VotreMotdePasse`
+```sh
+cargo run --release -- -p VotreMotdePasse
+```
 
 Remplacer `VotreMotdePasse` avec un mot de passe que vous devez conserver pour redémarrer votre client. Veuillez attendre que la compilation de massa-client se termine avant de continuer.
 

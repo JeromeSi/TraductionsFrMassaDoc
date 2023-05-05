@@ -6,24 +6,32 @@ Si vous utilisez les binaires, il faut simplement télécharger la nouvelle vers
 
 Si vous utilisez le code source, télécharger la version nightly-2022-02-27 de Rust :
 
-    rustup install nightly-2022-02-27
+```sh
+rustup install nightly-2023-02-27
+```
 
 Utiliser par défaut la dernière version quotidienne :
 
-    rustup default nightly-2022-02-27
+```sh
+rustup install nightly-2023-02-27`
+```
 
 Ensuite :
 
 Assurez vous d'avoir le bon dépôt git (surtout lors du changement de GitLab à GitHub, N.d.T. remarque obsolète) :
 
+```sh
     cd massa/
     git stash
     git remote set-url origin https://github.com/massalabs/massa.git
+```
 
 Mise à jour de Massa:
 
+```sh
     git checkout testnet
     git pull
+```
 
 Après la mise à jour, utiliser la commande `node_get_staking_addresses` dans votre client et vérifier que l'adresse envoyée est bien celle qui contient les jetons ("rolls") avec `wallet_info`.
 

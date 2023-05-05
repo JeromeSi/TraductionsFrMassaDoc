@@ -21,7 +21,7 @@ Avec Massa, les nœuds ne sont pas accessible par défaut et requiert une interv
 + Modifier la configuration du parefeu pour autoriser les connexions entrantes TCP sur les ports 31244 et 31245 (exemple : `sudo ufw allow 31244 && sudo ufw allow 31245` avec Ubuntu / Debian, ou configurer Windows Firewall on Windows)
 + Il faut éditer le fichier `massa-node/config/config.toml` (ou le créer s’il n’éxiste pas) avec le contenu suivant 
 ```toml
-[network]
+[protocol]
   routable_ip = "AAA.BBB.CCC.DDD"
 ```
   ou AAA.BBB.CCC.DDD doit être remplacé par votre adresse IP publique (pas l’adresse local). IPv6 fonctionne aussi.
