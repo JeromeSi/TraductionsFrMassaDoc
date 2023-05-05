@@ -1,6 +1,6 @@
 # Node installation with *systemd*
 
-Based on the episode 21.0
+Based on the episode 22.0
 
 ## Introduction
 
@@ -18,13 +18,13 @@ Without a graphic interface, we use **wget** for downloading :
 
 - go to the user directory with : **cd**
 
-- to download, use : **wget https://github.com/massalabs/massa/releases/download/TEST.21.0/massa_TEST.21.0_release_linux.tar.gz** . Verify the version, here it's **21.0**.
+- to download, use : **wget https://github.com/massalabs/massa/releases/download/TEST.22.0/massa_TEST.22.0_release_linux.tar.gz** . Verify the version, here it's **22.0**.
 
 ## 2. Uncompress the file
 
 If **tar** isn't install, you install it with **sudo apt install tar**
 
-We use **tar** with our file like : **tar xzf massa_TEST.21.0_release_linux.tar.gz** where **21.0** is the number of the version.
+We use **tar** with our file like : **tar xzf massa_TEST.22.0_release_linux.tar.gz** where **22.0** is the number of the version.
 
 With **ls**, you can you have a new folder named **massa** where you have all you need.
 
