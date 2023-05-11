@@ -1,14 +1,13 @@
 # Installation d'un node avec *systemd*
 
-Basée sur l'épisode 22.0
+Basée sur l'épisode 22.1
 
-On attend la sortie de l'épisode 22.0 avec impatience !
+On attend la sortie de l'épisode 22.1 avec impatience !
 
 ## Introduction
 
 J'utilise la version binaire sur une machine Linux.
 
-Mise en garde : le fonctionnement sur un serveur mutualisé (VPS) est aléatoire car les ressources ne sont pas toujours disponibles si le serveur accueille beaucoup de VPS.
 
 ## 1. Récupération de l'archive
 
@@ -22,13 +21,13 @@ Sans interface graphique, on utilise **wget** pour télécharger :
 
 - on va dans le dossier de l'utilisateur : **cd**
 
-- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.22.0/massa_TEST.22.0_release_linux.tar.gz** Il faudra remplacer les **XX.X** par la version recherchée
+- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.22.1/massa_TEST.22.1_release_linux.tar.gz** Il faudra remplacer les **XX.X** par la version recherchée
 
 ## 2. Décompression de l'archive
 
 Si **tar** n'est pas présent, on l'installe avec **sudo apt install tar**
 
-On utilise **tar** sur notre archive : **tar xzf massa_TEST.22.0_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
+On utilise **tar** sur notre archive : **tar xzf massa_TEST.22.1_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
 
 Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se trouve tout le nécessaire.
 
