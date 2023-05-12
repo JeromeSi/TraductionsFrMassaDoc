@@ -8,6 +8,27 @@ On attend la sortie de l'épisode 22.1 avec impatience !
 
 J'utilise la version binaire sur une machine Linux.
 
+## 0. Mise à jour
+
+Si vous avez suivi précédemment ce tutoriel et que vous voulez installer une nouvelle version, il suffit de refaire uniquement les étapes :
+
+1. Sauvegarde du `config.toml` et du wallet :
+```sh
+cp ~/massa/massa-node/config/config.toml ~/
+cp ~/massa/massa-client/wallet.dat ~/
+```
+2. Effacement du répertoire `masssa`
+```sh
+rm -r ~/massa
+```
+3. Récupération de l'archive
+4. Décompression de l'archive
+5. Récupération du `config.toml` et du wallet :
+```sh
+cp ~/ ~/massa/massa-node/config/config.toml
+cp ~/ ~/massa/massa-client/wallet.dat
+```
+6. On relance comme dans le 5.3. Lancement du service *massad*
 
 ## 1. Récupération de l'archive
 

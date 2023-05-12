@@ -85,4 +85,4 @@ node_bootstrap_whitelist add IPdeVotreNode
 
 ## Notes
 1. Si vous êtes en IPv4, vous ne pouvez pas faire un bootstrap sur un node cible en IPv6, seulement avec une IPv4
-2. Si vous êtes en IPv6, vous pouvez faire un bootstrap sur des node en IPv6 ou IPv4
+2. Si vous êtes en IPv6, vous pouvez faire un bootstrap sur des nodes en IPv6 ou IPv4

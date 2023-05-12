@@ -10,6 +10,28 @@ We are going to set the node to debug level 3. This will generate larger log fil
 
 It takes about around **70MB per hour** for logging (1.64GB per day).
 
+## 0. Mise à jour
+
+If you have previously followed this tutorial and want to install a new version, you only need to redo the following steps:
+
+1. Save `config.toml` and your wallet :
+```sh
+cp ~/massa/massa-node/config/config.toml ~/
+cp ~/massa/massa-client/wallet.dat ~/
+```
+2. Delete the `masssa` folder
+```sh
+rm -r ~/massa
+```
+3. Download archive
+4. Uncompress archive
+5. Copy `config.toml` and your wallet:
+```sh
+cp ~/ ~/massa/massa-node/config/config.toml
+cp ~/ ~/massa/massa-client/wallet.dat
+```
+6. Restart as in 5.3. Run *massad* service
+
 ## 1. Download binaries
 
 Go to the web page where you can find all releases : [the link](https://github.com/massalabs/massa/releases) to select the last version.
