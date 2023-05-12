@@ -77,7 +77,7 @@ Si on souhaite ne tenter un redémarrage que sur un node particulier, il suffit 
 ```
 9. **WARN massa_bootstrap::client: Error while bootstrapping: general bootstrap error: Parsing Error: Failed BootstrapServerMessage deserialization / Failed MIP store deserialization / Failed MipStoreRaw der / Failed mip store stats der / Failed MipStoreStats network version counters der / Failed counters len der / Fail / Input: [15, 0, 15]** : Pour le moment, je ne sais pas d'ou viens le problème mais il devrait être résolu dans la version 22. C'est effectivement résolu.
 10. **Error received from bootstrap server: IP ....... is not in the whitelist** : L'IP de votre node n'est pas autorisé à faire un bootstrap sur ce serveur. Il faut ajouter votre IP sur le serveur depuis `massa-client` avec :
-```toml
+```sh
 node_bootstrap_whitelist add IPdeVotreNode
 ```
 11. **Error while connecting to bootstrap server: all io errors except for Timedout, and would-block (unix error when timed out)** : Le problème est dans le fichier `massa/massa-node/config/config.toml`. Il vous faut le vérifier. Attention au changement de `[network]` en `[protocol]` à partir de l'épisode 22. Il faut ajouter une ligne vide à la fin de ce fichier aussi.
