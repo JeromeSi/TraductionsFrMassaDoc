@@ -21,7 +21,7 @@ cp ~/massa/massa-client/wallet.dat ~/
 ```
 2. Delete the `masssa` folder
 ```sh
-rm -r ~/massa
+rm -rf ~/massa
 ```
 3. Download archive
 4. Uncompress archive
