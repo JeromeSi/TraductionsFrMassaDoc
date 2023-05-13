@@ -27,8 +27,8 @@ rm -r ~/massa
 4. Décompression de l'archive
 5. Récupération du `config.toml` et du wallet :
 ```sh
-cp ~/ ~/massa/massa-node/config/config.toml
-cp ~/ ~/massa/massa-client/wallet.dat
+cp ~/config.toml ~/massa/massa-node/config/
+cp ~/wallet.dat ~/massa/massa-client/
 ```
 6. On relance comme dans le 5.3. Lancement du service *massad*
 
