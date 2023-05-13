@@ -1,8 +1,8 @@
 # Installation d'un node avec *systemd*
 
-Basée sur l'épisode 22.1
+Basée sur l'épisode 22.2
 
-On attend la sortie de l'épisode 22.1 avec impatience !
+Merci à JEROMEH sur le discord Massa pour sa relecture et la remontée des problèmes.
 
 ## Introduction
 
@@ -12,23 +12,20 @@ J'utilise la version binaire sur une machine Linux.
 
 Si vous avez suivi précédemment ce tutoriel et que vous voulez installer une nouvelle version, il suffit de refaire uniquement les étapes :
 
-1. Sauvegarde du `config.toml` et du wallet :
+1. Récupération de l'archive
 ```sh
-cp ~/massa/massa-node/config/config.toml ~/
-cp ~/massa/massa-client/wallet.dat ~/
+wget https://github.com/massalabs/massa/releases/download/TEST.22.2/massa_TEST.22.2_release_linux.tar.gz
 ```
-2. Effacement du répertoire `masssa`
+2. Décompression de l'archive
 ```sh
-rm -rf ~/massa
+tar xzf massa_TEST.22.2_release_linux.tar.gz
 ```
-3. Récupération de l'archive
-4. Décompression de l'archive
-5. Récupération du `config.toml` et du wallet :
+3. Spécifique au passage d'une version 21 et moins à une version 22 et plus :
 ```sh
-cp ~/config.toml ~/massa/massa-node/config/
-cp ~/wallet.dat ~/massa/massa-client/
+sed -i 's/\[network\]/\[protocole\]/g' ~/massa/massa-node/config/config.toml
 ```
-6. On relance comme dans le 5.3. Lancement du service *massad*
+4. ATTENTION ! Si vous avez une section `[bootstrap]` avec des nodes de bootstrap d'une version précédente, il faut les mettre à jour.
+5. On relance comme dans le 5.3. Lancement du service *massad*
 
 ## 1. Récupération de l'archive
 
@@ -42,13 +39,13 @@ Sans interface graphique, on utilise **wget** pour télécharger :
 
 - on va dans le dossier de l'utilisateur : **cd**
 
-- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.22.1/massa_TEST.22.1_release_linux.tar.gz** Il faudra remplacer les **XX.X** par la version recherchée
+- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.22.2/massa_TEST.22.2_release_linux.tar.gz** Il faudra remplacer les **XX.X** par la version recherchée
 
 ## 2. Décompression de l'archive
 
 Si **tar** n'est pas présent, on l'installe avec **sudo apt install tar**
 
-On utilise **tar** sur notre archive : **tar xzf massa_TEST.22.1_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
+On utilise **tar** sur notre archive : **tar xzf massa_TEST.22.2_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
 
 Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se trouve tout le nécessaire.
 
@@ -83,7 +80,7 @@ Il faut aussi connaître son IP publique pour la noter dans le fichier **~/massa
 Le fichier **~/massa/massa-node/config/config.toml** doit contenir :
 
 ```toml
-[network]
+[protocol]
 routable_ip = "Votre IPv4 ou IPv6 entourée de guillemet"
 #Il faut cette nouvelle ligne pour que cela fonctionne
 ```

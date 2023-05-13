@@ -1,6 +1,8 @@
 # Node installation with *systemd* in debug mode
 
-Based on the episode 22.1
+Based on the episode 22.2
+
+Thanks to JEROMEH on the Massa Discord for reviewing and reporting issues.
 
 ## Introduction
 
@@ -14,23 +16,20 @@ It takes about around **70MB per hour** for logging (1.64GB per day).
 
 If you have previously followed this tutorial and want to install a new version, you only need to redo the following steps:
 
-1. Save `config.toml` and your wallet :
+1. Download the archive
 ```sh
-cp ~/massa/massa-node/config/config.toml ~/
-cp ~/massa/massa-client/wallet.dat ~/
+wget https://github.com/massalabs/massa/releases/download/TEST.22.2/massa_TEST.22.2_release_linux.tar.gz
 ```
-2. Delete the `masssa` folder
+2. Uncompress the archive
 ```sh
-rm -rf ~/massa
+tar xzf massa_TEST.22.2_release_linux.tar.gz
 ```
-3. Download archive
-4. Uncompress archive
-5. Copy `config.toml` and your wallet:
+3. Specific to upgrading from version 21 and below to version 22 and above :
 ```sh
-cp ~/config.toml ~/massa/massa-node/config/
-cp ~/wallet.dat ~/massa/massa-client/
+sed -i 's/\[network\]/\[protocole\]/g' ~/massa/massa-node/config/config.toml
 ```
-6. Restart as in 5.3. Run *massad* service
+4. WARNING! If you have a `[bootstrap]` section with bootstrap nodes from a previous version, you need to update them.
+6. On relance comme dans le 5.3. Lancement du service *massad*
 
 ## 1. Download binaries
 
@@ -44,13 +43,13 @@ Without a graphic interface, we use **wget** for downloading :
 
 - go to the user directory with : **cd**
 
-- to download, use : **wget https://github.com/massalabs/massa/releases/download/TEST.22.1/massa_TEST.22.1_release_linux.tar.gz** . Verify the version, here it's **22.1**.
+- to download, use : **wget https://github.com/massalabs/massa/releases/download/TEST.22.2/massa_TEST.22.2_release_linux.tar.gz** . Verify the version, here it's **22.2**.
 
 ## 2. Uncompress the file
 
 If **tar** isn't install, you install it with **sudo apt install tar**
 
-We use **tar** with our file like : **tar xzf massa_TEST.22.1_release_linux.tar.gz** where **22.1** is the number of the version.
+We use **tar** with our file like : **tar xzf massa_TEST.22.2_release_linux.tar.gz** where **22.2** is the number of the version.
 
 With **ls**, you can you have a new folder named **massa** where you have all you need.
 
@@ -89,7 +88,7 @@ The file **~/massa/massa-node/config/config.toml** must contain :
     # Logging level. High log levels might impact performance. 0: ERROR, 1: WARN, 2: INFO, 3: DEBUG, 4: TRACE
     level = 3
 
-[network]
+[protocol]
 	routable_ip = "Your IPv4 or IPv6 quoted-quote"
 #You need to a new line after the line with IP
 ```
