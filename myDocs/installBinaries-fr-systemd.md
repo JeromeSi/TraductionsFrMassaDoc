@@ -19,7 +19,7 @@ cp ~/massa/massa-client/wallet.dat ~/
 ```
 2. Effacement du répertoire `masssa`
 ```sh
-rm -r ~/massa
+rm -rf ~/massa
 ```
 3. Récupération de l'archive
 4. Décompression de l'archive
