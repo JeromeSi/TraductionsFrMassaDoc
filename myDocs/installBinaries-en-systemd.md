@@ -24,8 +24,8 @@ rm -r ~/massa
 4. Uncompress archive
 5. Copy `config.toml` and your wallet:
 ```sh
-cp ~/ ~/massa/massa-node/config/config.toml
-cp ~/ ~/massa/massa-client/wallet.dat
+cp ~/config.toml ~/massa/massa-node/config/
+cp ~/wallet.dat ~/massa/massa-client/
 ```
 6. Restart as in 5.3. Run *massad* service
 
