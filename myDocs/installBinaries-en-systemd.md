@@ -26,7 +26,8 @@ tar xzf massa_TEST.22.2_release_linux.tar.gz
 sed -i 's/\[network\]/\[protocole\]/g' ~/massa/massa-node/config/config.toml
 ```
 4. WARNING! If you have a `[bootstrap]` section with bootstrap nodes from a previous version, you need to update them.
-6. On relance comme dans le 5.3. Lancement du service *massad*
+5. On relance comme dans le **5.3. Lancement du service massad**
+6. We buy rolls like in the **8. Buy rolls** without forgetting `node_start_staking AU...`
 
 ## 1. Download binaries
 

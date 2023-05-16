@@ -30,6 +30,7 @@ sed -i 's/\[network\]/\[protocole\]/g' ~/massa/massa-node/config/config.toml
 ```
 4. ATTENTION ! Si vous avez une section `[bootstrap]` avec des nodes de bootstrap d'une version précédente, il faut les mettre à jour.
 5. On relance comme dans le 5.3. Lancement du service *massad*
+6. On achète des rolls comme dans le 8. Acheter des rolls sans oublier `node_start_staking AU...`
 
 ## 1. Récupération de l'archive
 
