@@ -229,7 +229,7 @@ Vous lisez :
 
 - *Your last bootstrap on this server was ...s ago and you have to wait ...s before retrying* : on a droit à un bootstrap toutes les 12h, il faut attendre de tomber sur un serveur ou le bootstrap n'a pas été tenté ou se trouver une liste de node pour le faire mais ils ne seront pas officiels
 
-- autre chose : allez poser votre question à la communauté [Massa](https://massa.net/community) ou d'autres informations [lien FR](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations-fr.md)
+- autre chose : allez poser votre question à la communauté [Massa](https://massa.net/community) ou d'autres informations [lien FR](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapExplanations-fr.md)
 
 ## 8. Acheter des rolls
 
