@@ -12,21 +12,28 @@ J'utilise la version binaire sur une machine Linux.
 
 Si vous avez suivi précédemment ce tutoriel et que vous voulez installer une nouvelle version, il suffit de refaire uniquement les étapes :
 
-1. Récupération de l'archive
+1. Se rendre le dossier personnel
+```sh
+cd ~/
+```
+2. Récupération de l'archive
 ```sh
 wget https://github.com/massalabs/massa/releases/download/TEST.24.1/massa_TEST.24.1_release_linux.tar.gz
 ```
-2. Décompression de l'archive
+3. Décompression de l'archive
 ```sh
 tar xzf massa_TEST.24.1_release_linux.tar.gz
 ```
-3. Spécifique au passage d'une version 21 et moins à une version 22 et plus :
+4. Spécifique au passage d'une version 21 et moins à une version 22 et plus :
 ```sh
 sed -i 's/\[network\]/\[protocole\]/g' ~/massa/massa-node/config/config.toml
 ```
-4. ATTENTION ! Si vous avez une section `[bootstrap]` avec des nodes de bootstrap d'une version précédente, il faut les mettre à jour.
-5. On relance comme dans le 5.3. Lancement du service *massad*
-6. On achète des rolls comme dans le 8. Acheter des rolls sans oublier `node_start_staking AU...`
+5. ATTENTION ! Si vous avez une section `[bootstrap]` avec des nodes de bootstrap d'une version précédente, il faut les mettre à jour.
+6. On relance le node
+```sh
+sudo systemctl restart massad
+```
+7. On achète des rolls comme dans le 8. Acheter des rolls sans oublier `node_start_staking AU...`
 
 ## 1. Récupération de l'archive
 

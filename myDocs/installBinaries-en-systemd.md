@@ -13,21 +13,28 @@ I'm using binaries with Linux.
 
 If you have previously followed this tutorial and want to install a new version, you only need to redo the following steps:
 
-1. Download the archive
+1. Go to the personnal folder
+```sh
+cd ~/
+```
+2. Download the archive
 ```sh
 wget https://github.com/massalabs/massa/releases/download/TEST.24.1/massa_TEST.24.1_release_linux.tar.gz
 ```
-2. Uncompress the archive
+3. Uncompress the archive
 ```sh
 tar xzf massa_TEST.24.1_release_linux.tar.gz
 ```
-3. Specific to upgrading from version 21 and below to version 22 and above :
+4. Specific to upgrading from version 21 and below to version 22 and above :
 ```sh
 sed -i 's/\[network\]/\[protocole\]/g' ~/massa/massa-node/config/config.toml
 ```
-4. WARNING! If you have a `[bootstrap]` section with bootstrap nodes from a previous version, you need to update them.
-5. On relance comme dans le **5.3. Lancement du service massad**
-6. We buy rolls like in the **8. Buy rolls** without forgetting `node_start_staking AU...`
+5. WARNING! If you have a `[bootstrap]` section with bootstrap nodes from a previous version, you need to update them.
+6. We restart the node
+```sh
+sudo systemctl restart massad
+```
+7. We buy rolls like in the **8. Buy rolls** without forgetting `node_start_staking AU...`
 
 ## 1. Download binaries
 
