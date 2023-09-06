@@ -1,6 +1,6 @@
 # Installation d'un node avec *systemd* en mode *debug*
 
-Basée sur l'épisode 25.2
+Basée sur l'épisode 26.0
 
 Merci à JEROMEH sur le discord Massa pour sa relecture et la remontée des problèmes.
 
@@ -22,11 +22,11 @@ cd ~/
 ```
 2. Récupération de l'archive
 ```sh
-wget https://github.com/massalabs/massa/releases/download/TEST.25.2/massa_TEST.25.2_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/TEST.26.0/massa_TEST.26.0_release_linux.tar.gz
 ```
 3. Décompression de l'archive
 ```sh
-tar xzf massa_TEST.25.2_release_linux.tar.gz
+tar xzf massa_TEST.26.0_release_linux.tar.gz
 ```
 4. Spécifique au passage d'une version 21 et moins à une version 22 et plus :
 ```sh
@@ -51,13 +51,13 @@ Sans interface graphique, on utilise **wget** pour télécharger :
 
 - on va dans le dossier de l'utilisateur : **cd**
 
-- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.25.2/massa_TEST.25.2_release_linux.tar.gz**.
+- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/TEST.26.0/massa_TEST.26.0_release_linux.tar.gz**.
 
 ## 2. Décompression de l'archive
 
 Si **tar** n'est pas présent, on l'installe avec **sudo apt install tar**
 
-On utilise **tar** sur notre archive : **tar xzf massa_TEST.25.2_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
+On utilise **tar** sur notre archive : **tar xzf massa_TEST.26.0_release_linux.tar.gz** ou **XX.X** est le numéro de la version.
 
 Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se trouve tout le nécessaire.
 
