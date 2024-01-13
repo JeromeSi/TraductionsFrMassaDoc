@@ -9,8 +9,8 @@ FR : [Massa Tokenomics](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/m
 + Installation
     + FR : [Installation d'un node avec systemd](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr-systemd.md)
 + Démarrage (bootstrap)
-    + FR : [Le boostrap dans tous ces états](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapExplanations-fr.md)
-    + FR : [Liste des erreurs lors du bootstrap](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations-fr.md#liste-des-erreurs-lors-du-bootstrap)
+    + FR : [Le boostrap dans tous ces états](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapExplanations-fr.md)... et quelques solutions
+    + FR : [Liste des erreurs lors du bootstrap](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations-fr.md#liste-des-erreurs-lors-du-bootstrap)... et quelques solutions
 
 # Traductions d'articles provenant du site [massadopted.com](https://massadopted.com/)
 
