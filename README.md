@@ -2,6 +2,16 @@ Je regroupe ici les traductions en français dont j'ai connaissance.
 
 Bonne lecture !
 
+# La dernière traduction
+FR : [Massa Tokenomics](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/githubMassaLabs/tokenomics.md)
+
+# De l'aide pour le node !
++ Installation
+    + FR : [Installation d'un node avec systemd](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr-systemd.md)
++ Démarrage (bootstrap)
+    + FR : [Le boostrap dans tous ces états](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapExplanations-fr.md)
+    + FR : [Liste des erreurs lors du bootstrap](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations-fr.md#liste-des-erreurs-lors-du-bootstrap)
+
 # Traductions d'articles provenant du site [massadopted.com](https://massadopted.com/)
 
 + [[Massa Special Interview Series] Aurelien , Rust developer at Massa Labs](https://medium.com/@bouqsi/massa-special-interview-series-aur%C3%A9lien-d%C3%A9veloppeur-rust-chez-massa-labs-257424f2a6f8)
@@ -28,11 +38,8 @@ Bonne lecture !
 
 # Autres documents d'aide à propos de Massa
 
-+ FR : [Le boostrap dans tous ces états](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapExplanations-fr.md)
-+ FR : [Liste des erreurs lors du bootstrap](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations-fr.md#liste-des-erreurs-lors-du-bootstrap)
 + EN : [List of bootstrap errors](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/bootstrapErrorsAndExplanations.md#list-of-bootstrap-errors)
 + FR : [Installation d'un node avec nohup](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr.md#installation-dun-node-avec-nohup)
-+ FR : [Installation d'un node avec systemd](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr-systemd.md)
 + FR : [Installation d'un node avec systemd pour le débogage](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-fr-systemd-debug.md)
 + EN : [Node installation with systemd](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-en-systemd.md)
 + EN : [Node installation with systemd in debug mode](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-en-systemd-debug.md)

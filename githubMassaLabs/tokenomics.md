@@ -103,4 +103,4 @@ Ces récompenses ne tiennent pas compte des frais potentiels qui seront fixés p
 Les récompenses de staking sont débloquées, donc après 13 jours, je devrais avoir 105 jetons et je pourrai acheter un 24e "roll" !  
   
 ---  
-Auteur : 
+Mis à jour le 11 Janvier 2023 par Damir Vodenicarevic
