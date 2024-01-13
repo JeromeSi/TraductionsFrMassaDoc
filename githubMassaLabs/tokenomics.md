@@ -100,4 +100,7 @@ Il y a 172 800 blocs par jour, donc je m'attends à produire en moyenne 8 blocs 
 
 Ces récompenses ne tiennent pas compte des frais potentiels qui seront fixés par les utilisateurs si le réseau devient congestionné un jour.
 
-Les récompenses de staking sont débloquées, donc après 13 jours, je devrais avoir 105 jetons et je pourrai acheter un 24e "roll" !
+Les récompenses de staking sont débloquées, donc après 13 jours, je devrais avoir 105 jetons et je pourrai acheter un 24e "roll" !  
+  
+---  
+Auteur : 
