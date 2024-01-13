@@ -24,4 +24,6 @@ Ces étapes améliorent ensemble la décentralisation des jetons, limitent l'inf
 
 L'offre totale initiale de jetons est de 1 000 000 000 jetons Massa. Ces jetons initiaux sont créés dans le grand livre de genèse. Ils sont distribués comme suit.
 
-![Initial Coin Distribution]([/assets/images/tux.png](https://docs.massa.net/assets/images/distribution-6e178a33d57bd694701bbd1760471865.png)https://docs.massa.net/assets/images/distribution-6e178a33d57bd694701bbd1760471865.png)
+![Initial Coin Distribution](https://docs.massa.net/assets/images/distribution-6e178a33d57bd694701bbd1760471865.png)https://docs.massa.net/assets/images/distribution-6e178a33d57bd694701bbd1760471865.png)
+
+
