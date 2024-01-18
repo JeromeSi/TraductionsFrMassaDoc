@@ -1,6 +1,6 @@
 # Installation d'un node avec *systemd*
 
-Basée sur la version MAIN 2.0
+Basée sur la version MAIN 2.1
 
 Merci à JEROMEH sur le discord Massa pour sa relecture et la remontée des problèmes.
 
@@ -18,11 +18,11 @@ cd ~/
 ```
 2. Récupération de l'archive
 ```sh
-wget https://github.com/massalabs/massa/releases/download/MAIN.2.0/massa_MAIN.2.0_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/MAIN.2.1/massa_MAIN.2.1_release_linux.tar.gz
 ```
 3. Décompression de l'archive
 ```sh
-tar xzf massa_MAIN.2.0_release_linux.tar.gz
+tar xzf massa_MAIN.2.1_release_linux.tar.gz
 ```
 4. Spécifique au passage d'une version 21 et moins à une version 22 et plus :
 ```sh
@@ -33,7 +33,6 @@ sed -i 's/\[network\]/\[protocole\]/g' ~/massa/massa-node/config/config.toml
 ```sh
 sudo systemctl restart massad
 ```
-7. On achète des rolls comme dans le 8. Acheter des rolls sans oublier `node_start_staking AU...`
 
 ## 1. Récupération de l'archive
 
@@ -47,13 +46,13 @@ Sans interface graphique, on utilise **wget** pour télécharger :
 
 - on va dans le dossier de l'utilisateur : **cd**
 
-- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/MAIN.2.0/massa_MAIN.2.0_release_linux.tar.gz**
+- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/MAIN.2.1/massa_MAIN.2.1_release_linux.tar.gz**
 
 ## 2. Décompression de l'archive
 
 Si **tar** n'est pas présent, on l'installe avec **sudo apt install tar**
 
-On utilise **tar** sur notre archive : **tar xzf massa_MAIN.2.0_release_linux.tar.gz**.
+On utilise **tar** sur notre archive : **tar xzf massa_MAIN.2.1_release_linux.tar.gz**.
 
 Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se trouve tout le nécessaire.
 
@@ -103,7 +102,7 @@ Note : Si vous êtes en IPv6, votre IP change peut-être continuellement, c'est 
 
 La façon de faire va dépendre de chaque opérateur
 
-Si vous êtes en IPv4, il faut faire de la redirection de port sur la box.
+Si vous êtes en IPv4, il faut faire de la redirection de port (NAT) sur la box.
 
 Si vous êtes en IPv6, il faut ouvrir un port sur le pare-feu de la box pour l'adresse IPv6 du node.
 
@@ -240,17 +239,9 @@ Vous lisez :
 
 ## 8. Acheter des rolls
 
-Pour acheter des rolls, il faut des Massa. Durant le testnet, les Massa n'ont aucune valeur et sont distribués avec générosité.
+Pour acheter des rolls, il faut des Massa. Il faut attendre encore car, au 18/01/2024, il n'y a **pas de ventes officielles de Massa**. Si on vous en propose c'est de grè à grè et c'est, au mieux, risqué, au pire une arnaque.
 
 Il faut utiliser l'adresse de staking que l'on obtient en utilisant **node_get_staking_addresses** dans le client ou **wallet_info** (dans ce dernier cas, c'est celle nommée *Address* )
-
-Les sources sont :
-
-- sur [Discord](https://discord.gg/massa), il faut envoyer son adresse de staking sur le channel *#testnet-faucet*
-
-- sur [paranorm.pro](http://mfaucet.paranorm.pro/), il faut envoyer son adresse de staking et prouvez que l'on n'est pas un robot
-
-Les massa arrivent en moins d'une minute sur le wallet et on peut les dépenser dès que l'on voit le `Balance: final` avec plus de 100Massa (**wallet_info** dans **massa-client**).
 
 On utilise **buy_rolls adresseDeStaking 1 0** pour acheter 1 roll (qui coûte 100Mass) avec 0 fees.
 
