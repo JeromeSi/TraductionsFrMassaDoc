@@ -1,6 +1,8 @@
 # Node installation with *systemd*
 
-Based on the episode 26.1
+Edited in 2024 27th october.
+
+Based on the version  MAIN.2.3.
 
 Thanks to JEROMEH on the Massa Discord for reviewing and reporting issues.
 
@@ -19,15 +21,11 @@ cd ~/
 ```
 2. Download the archive
 ```sh
-wget https://github.com/massalabs/massa/releases/download/TEST.26.1/massa_TEST.26.1_release_linux.tar.gz
+https://github.com/massalabs/massa/releases/download/MAIN.2.3/massa_MAIN.2.3_release_linux.tar.gz
 ```
 3. Uncompress the archive
 ```sh
-tar xzf massa_TEST.26.1_release_linux.tar.gz
-```
-4. Specific to upgrading from version 21 and below to version 22 and above :
-```sh
-sed -i 's/\[network\]/\[protocole\]/g' ~/massa/massa-node/config/config.toml
+tar xzf massa_MAIN.2.3_release_linux.tar.gz
 ```
 5. WARNING! If you have a `[bootstrap]` section with bootstrap nodes from a previous version, you need to update them.
 6. We restart the node
@@ -38,9 +36,9 @@ sudo systemctl restart massad
 
 ## 1. Download binaries
 
-Go to the web page where you can find all releases : [the link](https://github.com/massalabs/massa/releases) to select the last version.
+Go to the web page where you can find all releases : [the link](https://github.com/massalabs/massa/releases/) to select the last version.
 
-For Linux, you need to download a file with name like ***massa_TEST.*** **XX.X** ***_release_linux.tar.gz*** where **XX.X** is the number of version.
+For Linux, you need to download a file with name like ***massa_MAIN.X.X_release_linux.tar.gz*** where **X.X** is the number of version, actually **2.3**.
 
 Without a graphic interface, we use **wget** for downloading :
 
@@ -48,13 +46,13 @@ Without a graphic interface, we use **wget** for downloading :
 
 - go to the user directory with : **cd**
 
-- to download, use : **wget https://github.com/massalabs/massa/releases/download/TEST.26.1/massa_TEST.26.1_release_linux.tar.gz** . Verify the version, here it's **26.1**.
+- to download, use : **wget https://github.com/massalabs/massa/releases/download/MAIN.2.3/massa_MAIN.2.3_release_linux.tar.gz** . Verify the version, here it's **2.3**.
 
 ## 2. Uncompress the file
 
 If **tar** isn't install, you install it with **sudo apt install tar**
 
-We use **tar** with our file like : **tar xzf massa_TEST.26.1_release_linux.tar.gz** where **26.1** is the number of the version.
+We use **tar** with our file like : **tar xzf massa_MAIN.2.3_release_linux.tar.gz** where **2.3** is the number of the version.
 
 With **ls**, you can you have a new folder named **massa** where you have all you need.
 
@@ -253,12 +251,12 @@ The sources of Massa are :
 
 The massa comes in less than 1 minute on the wallet and we can spend them as soon as we see `Balance: final` with more than 100Massa (**wallet_info** in **massa-client**).
 
-We use **buy_rolls StakingAddress 1 0** to buy one roll (cost 100Mass) with 0 fees.
+We use **buy_rolls StakingAddress 1 0.01** to buy one roll (cost 100Mass) with 0.01 fees.
 
 It take 3 cycles for the roll become active which is a maximum of  1h42min24s.
 
-## 9. The reward system
+## 9. Official docs
 
 Go to the doc :
 
-- [en anglais](https://docs.massa.net/en/latest/testnet/rewards.html)
+- [in english](https://https://docs.massa.net/)
