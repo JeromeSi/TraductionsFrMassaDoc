@@ -32,7 +32,7 @@ tar xzf massa_MAIN.2.3_release_linux.tar.gz
 ```sh
 sudo systemctl restart massad
 ```
-7. We buy rolls like in the **8. Buy rolls** without forgetting `node_start_staking AU...`
+7. We buy rolls like in the [8. Buy rolls](##8-Buy-rolls)**8. Buy rolls** without forgetting `node_start_staking AU...`
 
 ## 1. Download binaries
 
