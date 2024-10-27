@@ -259,4 +259,4 @@ It take 3 cycles for the roll become active which is a maximum of  1h42min24s.
 
 Go to the doc :
 
-- [in english](https://https://docs.massa.net/)
+- [in english](https://docs.massa.net/)
