@@ -1,6 +1,6 @@
 # Installation d'un node avec *systemd*
 
-Basée sur la version MAIN 2.1
+Basée sur la version MAIN 2.3
 
 Merci à JEROMEH sur le discord Massa pour sa relecture et la remontée des problèmes.
 
@@ -18,11 +18,11 @@ cd ~/
 ```
 2. Récupération de l'archive
 ```sh
-wget https://github.com/massalabs/massa/releases/download/MAIN.2.1/massa_MAIN.2.1_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/MAIN.2.3/massa_MAIN.2.3_release_linux.tar.gz
 ```
 3. Décompression de l'archive
 ```sh
-tar xzf massa_MAIN.2.1_release_linux.tar.gz
+tar xzf massa_MAIN.2.3_release_linux.tar.gz
 ```
 4. Spécifique au passage d'une version 21 et moins à une version 22 et plus :
 ```sh
@@ -46,13 +46,13 @@ Sans interface graphique, on utilise **wget** pour télécharger :
 
 - on va dans le dossier de l'utilisateur : **cd**
 
-- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/MAIN.2.1/massa_MAIN.2.1_release_linux.tar.gz**
+- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/MAIN.2.3/massa_MAIN.2.3_release_linux.tar.gz**
 
 ## 2. Décompression de l'archive
 
 Si **tar** n'est pas présent, on l'installe avec **sudo apt install tar**
 
-On utilise **tar** sur notre archive : **tar xzf massa_MAIN.2.1_release_linux.tar.gz**.
+On utilise **tar** sur notre archive : **tar xzf massa_MAIN.2.3_release_linux.tar.gz**.
 
 Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se trouve tout le nécessaire.
 
@@ -68,7 +68,7 @@ On commence par vérifier si on a ou pas un pare-feu actif : **sudo ufw status**
 
 Il y a 2 possibilités :
 
-- pas de pare-feu comme sur ce [lien](https://i0.wp.com/thelinuxcode.com/wp-content/uploads/2018/02/Terminal-augusto@thelinuxcode-_013.png?resize=579%2C160&ssl=1).
+- pas de pare-feu comme sur ce [lien](https://i0.wp.com/thelinuxcode.com/wp-content/uploads/2.38/02/Terminal-augusto@thelinuxcode-_013.png?resize=579%2.360&ssl=1).
 
 - pare-feu actif comme sur ce [lien](https://www.lifewire.com/thmb/uTsuw9NaujyxRdkwsB4fZeP8oTw=/993x803/filters:no_upscale():max_bytes(150000):strip_icc()/ufwdisable_2-5c6c406446e0fb0001917358.jpg).
 
@@ -239,11 +239,17 @@ Vous lisez :
 
 ## 8. Acheter des rolls
 
-Pour acheter des rolls, il faut des Massa. Il faut attendre encore car, au 18/01/2024, il n'y a **pas de ventes officielles de Massa**. Si on vous en propose c'est de grè à grè et c'est, au mieux, risqué, au pire une arnaque.
+Pour acheter des rolls, il faut des Massa. Vous pouvez acheter des Massa sur :
+- un DEX : [DUSA](https://dusa.io/)
+- deux CEX :
+	- [Bitget](https://www.bitget.com/fr/)
+	- [MEXC](https://www.mexc.com/fr-FR)
 
 Il faut utiliser l'adresse de staking que l'on obtient en utilisant **node_get_staking_addresses** dans le client ou **wallet_info** (dans ce dernier cas, c'est celle nommée *Address* )
 
-On utilise **buy_rolls adresseDeStaking 1 0** pour acheter 1 roll (qui coûte 100Mass) avec 0 fees.
+On utilise **buy_rolls adresseDeStaking 1 0.01** pour acheter 1 roll (qui coûte 100Mass) avec 0.01 fees.
+
+Vous pouvez vérifier que l'adresse est sélectionnée pour le staking avec **node_get_staking_addresses**
 
 Il faut 3 cycles pour que le roll deviennent actif soit 1h42min24s au maximum.
 
