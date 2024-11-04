@@ -29,7 +29,7 @@ You can find the officials node in the file **massa/massa-node/base_config/confi
 
 10. **Error received from bootstrap server: IP ....... is not in the whitelist** : the IP of your node is not allowed to make a bootstrap on this node. You must add your IP in the target node with `massa-client`:
 ```sh
-node_bootstrap_whitelist add IPdeVotreNode
+node_bootstrap_whitelist add NodeIP
 ```
 
 11. **Error while connecting to bootstrap server: all io errors except for Timedout, and would-block (unix error when timed out)** : the error is in the file `massa/massa-node/config/config.toml`. You must check it. You have to change `[network]` to `[protocol]` since testnet version 22. You must add a blank line at the end of the file.
