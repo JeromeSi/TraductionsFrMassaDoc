@@ -34,7 +34,7 @@ node_bootstrap_whitelist add NodeIP
 
 11. **Error while connecting to bootstrap server: all io errors except for Timedout, and would-block (unix error when timed out)** : the error is in the file `massa/massa-node/config/config.toml`. You must check it. You have to change `[network]` to `[protocol]` since testnet version 22. You must add a blank line at the end of the file.
 
-12. **Error while connecting to bootstrap server: Bootstrap IO error: Address family not supported by protocol (os error 97)** : yoou disable IPv6 in your OS and your node can't be connected with a node with an IPv6.
+12. **Error while connecting to bootstrap server: Bootstrap IO error: Address family not supported by protocol (os error 97)** : you disable IPv6 in your OS and your node can't be connected with a node with an IPv6.
 
 13. **Error while connecting to bootstrap server: io error: Cannot assign requested address (os error 99)** : at the moment, I don't know how to solve the problem.
 
