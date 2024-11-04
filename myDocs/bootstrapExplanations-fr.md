@@ -1,6 +1,6 @@
 # Parlons bootstrap
 
-> Mis à jour pour la version 22.0
+> Mis à jour pour la version MAIN.2.3
 
 ## 1. Qu'est-ce que le bootstrap ?
 Le bootstrap est une étape. Quand vous faites un bootstrap, votre node se synchronise avec les informations de la blockchain Massa.
@@ -83,7 +83,8 @@ Si on souhaite ne tenter un redémarrage que sur un node particulier, il suffit 
 node_bootstrap_whitelist add IPdeVotreNode
 ```
 11. **Error while connecting to bootstrap server: all io errors except for Timedout, and would-block (unix error when timed out)** : Le problème est dans le fichier `massa/massa-node/config/config.toml`. Il vous faut le vérifier. Attention au changement de `[network]` en `[protocol]` à partir de l'épisode 22. Il faut ajouter une ligne vide à la fin de ce fichier aussi.
-12. **Error while connecting to bootstrap server: io error: Cannot assign requested address (os error 99)** : Pour le moment, je ne sais pas d'ou viens le problème.
+12. **Error while connecting to bootstrap server: Bootstrap IO error: Address family not supported by protocol (os error 97)** : vous avez désactivé la gestion de l'IPv6 dans votre OS et vous ne pouvez pas vous connecter avec l'IPv6 d'un node de boostrap.
+13. **Error while connecting to bootstrap server: io error: Cannot assign requested address (os error 99)** : Pour le moment, je ne sais pas d'ou viens le problème.
 
 ## Notes
 1. Si vous êtes en IPv4, vous ne pouvez pas faire un bootstrap sur un node cible en IPv6, seulement avec une IPv4
