@@ -26,19 +26,19 @@ tar xzf massa_MAIN.2.5.1_release_linux.tar.gz
 ```
 4. Pour la mise à jour d'une version 2.4 et moins vers la version **2.5.1**, il faut démarrer une première fois le node à la main pour lire et accepter la charte de la communauté si elle vous convient :
 	- On démarre le node :
-```sh
-cd massa/massa-node
-./massa-node
-```
+	```sh
+	cd massa/massa-node
+	./massa-node
+	```
 	- On démarre le client :
-```sh
-cd ../massa/massa-client
-./massa-client
-```
+	```sh
+	cd ../massa/massa-client
+	./massa-client
+	```
 	- Modification du fichier **/etc/systemd/system/massad.service**, on ajoute l'option `-a` à la ligne d'éxécution de `massa-node` :
-```desktop
-ExecStart=/home/[USER]/massa/massa-node/massa-node -a -p LeMotDePasse
-```
+	```desktop
+	ExecStart=/home/[USER]/massa/massa-node/massa-node -a -p LeMotDePasse
+	```
 
 	N.B. : *L'option `-a` permet d'accepter automatiquement la chartre de la communauté pour démarrer **massa-node**.*
 
