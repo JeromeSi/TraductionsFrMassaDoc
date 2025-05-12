@@ -1,6 +1,6 @@
 # Installation d'un node avec *systemd*
 
-Basée sur la version MAIN 2.4
+Basée sur la version MAIN 2.5.1
 
 Merci à JEROMEH sur le discord Massa pour sa relecture et la remontée des problèmes.
 
@@ -18,17 +18,32 @@ cd ~/
 ```
 2. Récupération de l'archive
 ```sh
-wget https://github.com/massalabs/massa/releases/download/MAIN.2.4/massa_MAIN.2.4_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/MAIN.2.5.1/massa_MAIN.2.5.1_release_linux.tar.gz
 ```
 3. Décompression de l'archive
 ```sh
-tar xzf massa_MAIN.2.4_release_linux.tar.gz
+tar xzf massa_MAIN.2.5.1_release_linux.tar.gz
 ```
-4. Spécifique au passage d'une version 21 et moins à une version 22 et plus :
+4. Pour la mise à jour d'une version 2.4 et moins vers la version **2.5.1**, il faut démarrer une première fois le node à la main pour lire et accepter la charte de la communauté si elle vous convient :
+	- On démarre le node :
 ```sh
-sed -i 's/\[network\]/\[protocole\]/g' ~/massa/massa-node/config/config.toml
+cd massa/massa-node
+./massa-node
 ```
+	- On démarre le client :
+```sh
+cd ../massa/massa-client
+./massa-client
+```
+	- Modification du fichier **/etc/systemd/system/massad.service**, on ajoute l'option `-a` à la ligne d'éxécution de `massa-node` :
+```desktop
+ExecStart=/home/[USER]/massa/massa-node/massa-node -a -p LeMotDePasse
+```
+
+	N.B. : *L'option `-a` permet d'accepter automatiquement la chartre de la communauté pour démarrer **massa-node**.*
+
 5. ATTENTION ! Si vous avez une section `[bootstrap]` avec des nodes de bootstrap d'une version précédente, il faut les mettre à jour.
+
 6. On relance le node
 ```sh
 sudo systemctl restart massad
@@ -46,13 +61,13 @@ Sans interface graphique, on utilise **wget** pour télécharger :
 
 - on va dans le dossier de l'utilisateur : **cd**
 
-- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/MAIN.2.4/massa_MAIN.2.4_release_linux.tar.gz**
+- pour l'utiliser : **wget https://github.com/massalabs/massa/releases/download/MAIN.2.3/massa_MAIN.2.3_release_linux.tar.gz**
 
 ## 2. Décompression de l'archive
 
 Si **tar** n'est pas présent, on l'installe avec **sudo apt install tar**
 
-On utilise **tar** sur notre archive : **tar xzf massa_MAIN.2.4_release_linux.tar.gz**.
+On utilise **tar** sur notre archive : **tar xzf massa_MAIN.2.3_release_linux.tar.gz**.
 
 Avec **ls**, vous pouvez voir que vous avez un dossier **massa** dans lequel se trouve tout le nécessaire.
 
@@ -129,7 +144,7 @@ Dans ce fichier, on écrit (ou on copie-colle) :
 	User=root
 	PermissionsStartOnly=true`
 	WorkingDirectory=/home/[USER]/massa/massa-node
-	ExecStart=/home/[USER]/massa/massa-node/massa-node -p LeMotDePasse
+	ExecStart=/home/[USER]/massa/massa-node/massa-node -a -p LeMotDePasse
 	Restart=on-failure
 	RestartSec=3
 	LimitNOFILE=65535
@@ -151,9 +166,20 @@ On rend le fichier **/etc/systemd/system/massad.service** exécutable par tout l
 
 `sudo chmod 777 /etc/systemd/system/massad.service`
 
-### 2. Lancement du service *massad*
+### 2. Lancement du service *massad* en version **2.5.1** et ultérieur
 
-On démarre le service *Massad* avec :
+À partir de la version **2.5.1**, il faut démarrer une première fois le node à la main pour lire et accepter la charte de la communauté si elle vous convient :
+	- On démarre le node :
+```sh
+cd massa/massa-node
+./massa-node
+```
+	- On démarre le client :
+```sh
+cd ../massa/massa-client
+./massa-client
+```
+Maintenant, on peut démarrer le service *Massad* avec :
 
 `sudo systemctl start massad`
 
