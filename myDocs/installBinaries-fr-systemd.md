@@ -10,21 +10,26 @@ J'utilise la version binaire sur une machine Linux.
 
 ## 0. Mise à jour
 
-Si vous avez suivi précédemment ce tutoriel et que vous voulez installer une nouvelle version, il suffit de refaire uniquement les étapes :
+Si vous avez suivi précédemment ce tutoriel et que vous voulez installer une nouvelle version, il suffit de refaire uniquement les étapes avec une complexité pour le version 2.5.1 à cause de la charte
 
-1. Se rendre le dossier personnel
+1. Éteindre le démon *massad.service* :
+```sh
+sudo systemctl stop massad.service
+sudo systemctl disable massad.service
+```
+2. Se rendre le dossier personnel
 ```sh
 cd ~/
 ```
-2. Récupération de l'archive
+3. Récupération de l'archive
 ```sh
 wget https://github.com/massalabs/massa/releases/download/MAIN.2.5.1/massa_MAIN.2.5.1_release_linux.tar.gz
 ```
-3. Décompression de l'archive
+4. Décompression de l'archive
 ```sh
 tar xzf massa_MAIN.2.5.1_release_linux.tar.gz
 ```
-4. Pour la mise à jour d'une version 2.4 et moins vers la version **2.5.1**, il faut démarrer une première fois le node à la main pour lire et accepter la charte de la communauté si elle vous convient :
+5. Pour la mise à jour d'une version 2.4 et moins vers la version **2.5.1**, il faut démarrer une première fois le node à la main pour lire et accepter la charte de la communauté Massa si elle vous convient :
 	- On démarre le node :
 	```sh
 	cd massa/massa-node
@@ -40,12 +45,18 @@ tar xzf massa_MAIN.2.5.1_release_linux.tar.gz
 	ExecStart=/home/[USER]/massa/massa-node/massa-node -a -p LeMotDePasse
 	```
 
-	N.B. : *L'option `-a` permet d'accepter automatiquement la chartre de la communauté pour démarrer **massa-node**.*
+	N.B. : *L'option `-a` permet d'accepter automatiquement la chartre de la communauté Massa pour démarrer **massa-node**.*
 
-5. ATTENTION ! Si vous avez une section `[bootstrap]` avec des nodes de bootstrap d'une version précédente, il faut les mettre à jour.
-
-6. On relance le node
+6. On met à jour les services disponibles :
 ```sh
+sudo systemctl daemon-reload
+```
+
+7. ATTENTION ! Si vous avez une section `[bootstrap]` avec des nodes de bootstrap d'une version précédente, il faut les mettre à jour.
+
+8. On relance le node
+```sh
+sudo systemctl enable massad
 sudo systemctl restart massad
 ```
 
