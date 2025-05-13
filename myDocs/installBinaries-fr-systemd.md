@@ -258,6 +258,8 @@ L'opération pour rejoindre le réseau Massa s'appelle le *bootstrap*.
 
 La commande **get_status** renvoie plein d'informations quand le node est connecté au réseau Massa. Dans ce cas, rendez-vous au paragraphe expliquant l'achat d'un roll.
 
+On en profite pour vérifier `Chain id: 77658377` qui permet de s'assurer que l'on soit sur le la chaine  principale.
+
 Si **get_status** renvoie un message d'erreur en rouge, il y a un problème.
 
 On va chercher les informations dans les dernières lignes du fichier de log avec **sudo journalctl -u massad**
