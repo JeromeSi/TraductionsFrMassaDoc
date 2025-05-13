@@ -2,7 +2,7 @@
 
 Basée sur la version MAIN 2.5.1
 
-Merci à JEROMEH sur le discord Massa pour sa relecture et la remontée des problèmes.
+Merci à JEROMEH et Oliver Wild Boar sur le discord Massa pour leur relecture et la remontée des problèmes.
 
 ## Introduction
 
@@ -10,7 +10,7 @@ J'utilise la version binaire sur une machine Linux.
 
 ## 0. Mise à jour
 
-Si vous avez suivi précédemment ce tutoriel et que vous voulez installer une nouvelle version, il suffit de refaire uniquement les étapes avec une complexité pour le version 2.5.1 à cause de la charte
+Si vous avez suivi précédemment ce tutoriel et que vous voulez installer une nouvelle version, il suffit de refaire uniquement les étapes avec une complexité pour le version 2.5.1 à cause de la charte.
 
 1. Éteindre le démon *massad.service* :
 ```sh
