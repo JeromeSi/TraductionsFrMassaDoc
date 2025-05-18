@@ -29,23 +29,12 @@ wget https://github.com/massalabs/massa/releases/download/MAIN.2.5.1/massa_MAIN.
 ```sh
 tar xzf massa_MAIN.2.5.1_release_linux.tar.gz
 ```
-5. Pour la mise à jour d'une version 2.4 et moins vers la version **2.5.1**, il faut démarrer une première fois le node à la main pour lire et accepter la charte de la communauté Massa si elle vous convient :
-	- On démarre le node :
-	```sh
-	cd massa/massa-node
-	./massa-node
-	```
-	- On démarre le client :
-	```sh
-	cd ../massa/massa-client
-	./massa-client
-	```
-	- Modification du fichier **/etc/systemd/system/massad.service**, on ajoute l'option `-a` à la ligne d'éxécution de `massa-node` :
+5. Pour la mise à jour d'une version 2.4 et moins vers la version **2.5.1**, il faut modifier le fichier **/etc/systemd/system/massad.service**, on ajoute l'option `-a` (acceptation automatique de la [charte de la communauté Massa](https://github.com/massalabs/massa/blob/main/COMMUNITY_CHARTER.md))à la ligne d'éxécution de `massa-node` :
 	```desktop
 	ExecStart=/home/[USER]/massa/massa-node/massa-node -a -p LeMotDePasse
 	```
 
-	N.B. : *L'option `-a` permet d'accepter automatiquement la chartre de la communauté Massa pour démarrer **massa-node**.*
+	N.B. : *L'option `-a` permet d'accepter automatiquement la [chartre de la communauté Massa](https://github.com/massalabs/massa/blob/main/COMMUNITY_CHARTER.md) pour démarrer **massa-node**.*
 
 6. On met à jour les services disponibles :
 ```sh
@@ -163,6 +152,7 @@ Dans ce fichier, on écrit (ou on copie-colle) :
 	WantedBy=multi-user.target
 ```
 
+**N.B.** : *L'option `-a` permet d'accepter automatiquement la [chartre de la communauté Massa](https://github.com/massalabs/massa/blob/main/COMMUNITY_CHARTER.md) pour démarrer **massa-node**.*
 Adaptation à votre situation :
 
 + Il faut remplacer `[USER]` par l'identifiant de l'utilisateur qui fait fonctionner Massa.
