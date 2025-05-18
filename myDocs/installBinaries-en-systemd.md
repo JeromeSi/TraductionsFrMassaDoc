@@ -1,8 +1,8 @@
 # Node installation with *systemd*
 
-Edited in 2024 27th october.
+Edited in 2025 18th may.
 
-Based on the version  MAIN.2.3.
+Based on the version  MAIN.2.5.1
 
 Thanks to JEROMEH and Oliver Wild Boar on the Massa Discord for reviewing and reporting issues.
 
