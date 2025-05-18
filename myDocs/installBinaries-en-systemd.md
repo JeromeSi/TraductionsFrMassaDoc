@@ -4,7 +4,7 @@ Edited in 2024 27th october.
 
 Based on the version  MAIN.2.3.
 
-Thanks to JEROMEH on the Massa Discord for reviewing and reporting issues.
+Thanks to JEROMEH and Oliver Wild Boar on the Massa Discord for reviewing and reporting issues.
 
 ## Introduction
 
@@ -13,26 +13,48 @@ I'm using binaries with Linux.
 
 ## 0. Update
 
-If you have previously followed this tutorial and want to install a new version, you only need to redo the following steps:
+If you have previously followed this tutorial and want to install a new version, you only need to redo the following steps some new things with 2.5.1 version:
 
-1. Go to the personnal folder
+1. Stop *massad.service* daemon:
+```sh
+sudo systemctl stop massad.service
+sudo systemctl disable massad.service
+```
+
+2. Go to the personnal folder
 ```sh
 cd ~/
 ```
-2. Download the archive
+
+3. Download the archive
 ```sh
-https://github.com/massalabs/massa/releases/download/MAIN.2.3/massa_MAIN.2.3_release_linux.tar.gz
+https://github.com/massalabs/massa/releases/download/MAIN.2.5.1/massa_MAIN.2.5.1_release_linux.tar.gz
 ```
-3. Uncompress the archive
+
+4. Uncompress the archive
 ```sh
-tar xzf massa_MAIN.2.3_release_linux.tar.gz
+tar xzf massa_MAIN.2.5.1_release_linux.tar.gz
 ```
-5. WARNING! If you have a `[bootstrap]` section with bootstrap nodes from a previous version, you need to update them.
-6. We restart the node
+
+5. To update 2.4 version and before to 2.5.1 version, you need to modify **/etc/systemd/system/massad.service**, we add `-a` option (to accpet automaticaly the [Massa community chart](https://github.com/massalabs/massa/blob/main/COMMUNITY_CHARTER.md)) in line to start `massa-node` :
+```desktop
+ExecStart=/home/[USER]/massa/massa-node/massa-node -a -p YourPassword
+```
+
+6. we update services:
 ```sh
+sudo systemctl daemon-reload
+```
+
+7. WARNING! If you have a `[bootstrap]` section with bootstrap nodes from a previous version, you need to update them.
+
+8. We restart the node
+```sh
+sudo systemctl enable massad
 sudo systemctl restart massad
 ```
-7. We buy rolls like in the [8. Buy rolls](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-en-systemd.md#8-buy-rolls) without forgetting `node_start_staking AU...`
+
+9. We buy rolls like in the [8. Buy rolls](https://github.com/JeromeSi/TraductionsFrMassaDoc/blob/main/myDocs/installBinaries-en-systemd.md#8-buy-rolls) without forgetting `node_start_staking AU...`
 
 ## 1. Download binaries
 

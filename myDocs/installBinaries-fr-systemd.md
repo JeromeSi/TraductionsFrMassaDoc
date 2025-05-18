@@ -17,14 +17,17 @@ Si vous avez suivi précédemment ce tutoriel et que vous voulez installer une n
 sudo systemctl stop massad.service
 sudo systemctl disable massad.service
 ```
+
 2. Se rendre dans le dossier personnel
 ```sh
 cd ~/
 ```
+
 3. Récupération de l'archive
 ```sh
 wget https://github.com/massalabs/massa/releases/download/MAIN.2.5.1/massa_MAIN.2.5.1_release_linux.tar.gz
 ```
+
 4. Décompression de l'archive
 ```sh
 tar xzf massa_MAIN.2.5.1_release_linux.tar.gz
