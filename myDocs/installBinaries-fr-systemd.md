@@ -17,7 +17,7 @@ Si vous avez suivi précédemment ce tutoriel et que vous voulez installer une n
 sudo systemctl stop massad.service
 sudo systemctl disable massad.service
 ```
-2. Se rendre le dossier personnel
+2. Se rendre dans le dossier personnel
 ```sh
 cd ~/
 ```
@@ -29,7 +29,7 @@ wget https://github.com/massalabs/massa/releases/download/MAIN.2.5.1/massa_MAIN.
 ```sh
 tar xzf massa_MAIN.2.5.1_release_linux.tar.gz
 ```
-5. Pour la mise à jour d'une version 2.4 et moins vers la version **2.5.1**, il faut modifier le fichier **/etc/systemd/system/massad.service**, on ajoute l'option `-a` (acceptation automatique de la [charte de la communauté Massa](https://github.com/massalabs/massa/blob/main/COMMUNITY_CHARTER.md))à la ligne d'éxécution de `massa-node` :
+5. Pour la mise à jour d'une version 2.4 et moins vers la version **2.5.1**, il faut modifier le fichier **/etc/systemd/system/massad.service**, on ajoute l'option `-a` (acceptation automatique de la [charte de la communauté Massa](https://github.com/massalabs/massa/blob/main/COMMUNITY_CHARTER.md)) à la ligne d'éxécution de `massa-node` :
 	```desktop
 	ExecStart=/home/[USER]/massa/massa-node/massa-node -a -p LeMotDePasse
 	```
