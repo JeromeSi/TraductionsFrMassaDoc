@@ -68,13 +68,13 @@ Without a graphic interface, we use **wget** for downloading :
 
 - go to the user directory with : **cd**
 
-- to download, use : **wget https://github.com/massalabs/massa/releases/download/MAIN.2.3/massa_MAIN.2.3_release_linux.tar.gz** . Verify the version, here it's **2.3**.
+- to download, use : **wget https://github.com/massalabs/massa/releases/download/MAIN.2.5.1/massa_MAIN.2.5.1_release_linux.tar.gz** . Verify the version, here it's **2.5.1**.
 
 ## 2. Uncompress the file
 
 If **tar** isn't install, you install it with **sudo apt install tar**
 
-We use **tar** with our file like : **tar xzf massa_MAIN.2.3_release_linux.tar.gz** where **2.3** is the number of the version.
+We use **tar** with our file like : **tar xzf massa_MAIN.2.5.1_release_linux.tar.gz** where **2.5.1** is the number of the version.
 
 With **ls**, you can you have a new folder named **massa** where you have all you need.
 
@@ -150,7 +150,7 @@ In this file, we write (or make a copy-paste) :
 [Service]
 	User=root
 	WorkingDirectory=/home/[USER]/massa/massa-node
-	ExecStart=/home/[USER]/massa/massa-node/massa-node -p YourPassword
+	ExecStart=/home/[USER]/massa/massa-node/massa-node -a -p YourPassword
 	Restart=on-failure
 	RestartSec=3
 	LimitNOFILE=65535
